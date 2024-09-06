@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hashing</title>
+
+    <link href="datastruct.css" rel="stylesheet">
+    <link href="proglang.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="prism.css" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+
+          <div class="navbar-nav icon">
+            <div class="logo-one">
+                <i class="fa-solid fa-code logo"></i>
+            </div>
+            <div class="txt">
+                <a class="nav-link active" aria-current="page" href="index.html">CodeQuick.in</a>
+            </div>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Programming Languages
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="cpp.html">C++</a></li>
+                  <li><a class="dropdown-item" href="c.html">C</a></li>
+                  <li><a class="dropdown-item" href="python.html">Python</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Data Structures
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="arrays.html">Arrays</a></li>
+                  <li><a class="dropdown-item" href="strings.html">Strings</a></li>
+                  <li><a class="dropdown-item" href="linkedlist.html">Linked List</a></li>
+                  <li><a class="dropdown-item" href="stack.html">Stack</a></li>
+                  <li><a class="dropdown-item" href="queue.html">Queue</a></li>
+                  <li><a class="dropdown-item" href="dequeue.html">Deque</a></li>
+                  <li><a class="dropdown-item" href="tree.html">Tree</a></li>
+                  <li><a class="dropdown-item" href="heap.html">Heap</a></li>
+                  <li><a class="dropdown-item" href="graph.html">Graph</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Algorithms
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="searchin_sorting.html">Searching and Sorting</a></li>
+                    <li><a class="dropdown-item" href="two_pointer.html">Two Pointer</a></li>
+                    <li><a class="dropdown-item" href="prefix_sum.html">Prefix Sum</a></li>
+                    <li><a class="dropdown-item" href="kadane.html">Kadane</a></li>
+                    <li><a class="dropdown-item" href="kmp.html">KMP</a></li>
+                    <li><a class="dropdown-item" href="eucledian.html">Euclidean Algorithm for GCD</a></li>
+                    <li><a class="dropdown-item" href="hare.html">Hare and tortoise</a></li>
+                    <li><a class="dropdown-item" href="dikstra.html">Dijkstra's Algorithm</a></li>
+                    <li><a class="dropdown-item" href="bellman.html">Bellman-Ford Algorithm</a></li>
+                    <li><a class="dropdown-item" href="floyd.html">Floyd-Warshall Algorithm</a></li>
+                    <li><a class="dropdown-item" href="prims.html">Prim's Algorithm</a></li>
+                    <li><a class="dropdown-item" href="kruskal.html">Kruskal Algorithm</a></li>
+                    <li><a class="dropdown-item" href="kosaraju.html">Kosaraju's Algorithm</a></li>
+                  </ul>
+              </li>
+            </ul>
+          </div>
+
+
+          
+        </div>
+      </nav>
+
+
+      <!-- HERO SECTION -->
+
+      <div class="hero bg-dark-subtle">
+        <h1 class="array-heading"><i class="fas fa-database icon"></i>Hash Map</h1>
+        <h1 class="array-subheading"><i class="fas fa-info-circle icon"></i>Implementing Deque (Double-Ended Queue) using Arrays :</h1>
+        <p class="array-text-one">
+          A hash table, also known as a <span class="highlight"> hash map</span>, is a data structure that implements an associative array abstract data type, a structure that can map keys to values. It uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.
+        </p>
+  
+        <div class="array-code ">
+          <ul class=" nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class=" lang-clr nav-link active" id="cpp-tab" data-bs-toggle="tab" href="#cpp" role="tab" aria-controls="cpp" aria-selected="true">C++</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class=" lang-clr nav-link" id="java-tab" data-bs-toggle="tab" href="#java" role="tab" aria-controls="java" aria-selected="false">Java</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="lang-clr nav-link" id="python-tab" data-bs-toggle="tab" href="#python" role="tab" aria-controls="python" aria-selected="false">Python</a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class=" array-code tab-content" id="myTabContent">
+  
+          <div class="tab-pane fade show active" id="cpp" role="tabpanel" aria-labelledby="cpp-tab">
+            <pre>
+              <code class="language-cpp">
+                  #include &lt; iostream &gt;
+                  #include &lt; vector &gt;
+                  #include &lt; list &gt;
+                  using namespace std;
+                    class HashTable {
+                    private:
+                        int capacity;
+                        vector&lt;list&lt;pair&lt;string, int&gt;&gt;&gt; table;
+                    
+                    public:
+                        HashTable(int capacity) : capacity(capacity), table(capacity) {}
+                    
+                        int hash_func(const std::string& key) {
+                            // Simple hash function using ASCII values
+                            int hash = 0;
+                            for (char ch : key) {
+                                hash += int(ch);
+                            }
+                            return hash % capacity;
+                        }
+                    
+                        void insert(string& key, int value) {
+                            int index = hash_func(key);
+                            for (auto& entry : table[index]) {
+                                if (entry.first == key) {
+                                    entry.second = value;
+                                    return;
+                                }
+                            }
+                            table[index].emplace_back(key, value);
+                        }
+                    
+                        void remove(string& key) {
+                            int index = hash_func(key);
+                            auto& bucket = table[index];
+                            for (auto it = bucket.begin(); it != bucket.end(); ++it) {
+                                if (it->first == key) {
+                                    bucket.erase(it);
+                                    return;
+                                }
+                            }
+                        }
+                    
+                        int search(string& key) {
+                            int index = hash_func(key);
+                            for (auto& entry : table[index]) {
+                                if (entry.first == key) {
+                                    return entry.second;
+                                }
+                            }
+                            return -1; // Return -1 or throw exception for not found
+                        }
+                    
+                        void display() {
+                            for (int i = 0; i < capacity; ++i) {
+                                cout << "[" << i << "]: ";
+                                for (auto& entry : table[i]) {
+                                    cout << "(" << entry.first << ", " << entry.second << ") ";
+                                }
+                                cout << endl;
+                            }
+                        }
+                    };
+                    
+                    int main() {
+                        HashTable hash_table(10);
+                        hash_table.insert("apple", 5);
+                        hash_table.insert("banana", 2);
+                        hash_table.insert("orange", 7);
+                    
+                        std::cout << "Value of 'banana': " << hash_table.search("banana") << std::endl;
+                        hash_table.remove("banana");
+                        std::cout << "Value of 'banana' after removal: " << hash_table.search("banana") << std::endl;
+                    
+                        hash_table.display();
+                    
+                        return 0;
+                    }
+                    
+                  
+                  
+              </code>
+            </pre>
+          </div>
+  
+          <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
+            <pre>
+              <code class="language-java">
+                public class Deque {
+                  private int capacity;
+                  private int[] deque;
+                  private int front;
+                  private int rear;
+              
+                  public Deque(int capacity) {
+                      this.capacity = capacity;
+                      this.deque = new int[capacity];
+                      this.front = -1;
+                      this.rear = 0;
+                  }
+              
+                  public boolean isEmpty() {
+                      return front == -1;
+                  }
+              
+                  public boolean isFull() {
+                      return (front == 0 && rear == capacity - 1) || (front == rear + 1);
+                  }
+              
+                  public void insertFront(int item) {
+                      if (isFull()) {
+                          System.out.println("Deque overflow! Cannot insert at the front.");
+                      } else {
+                          if (front == -1) {
+                              front = rear = 0;
+                          } else if (front == 0) {
+                              front = capacity - 1;
+                          } else {
+                              front--;
+                          }
+                          deque[front] = item;
+                          System.out.println("Inserted " + item + " at the front of the deque.");
+                      }
+                  }
+              
+                  public void insertRear(int item) {
+                      if (isFull()) {
+                          System.out.println("Deque overflow! Cannot insert at the rear.");
+                      } else {
+                          if (front == -1) {
+                              front = rear = 0;
+                          } else if (rear == capacity - 1) {
+                              rear = 0;
+                          } else {
+                              rear++;
+                          }
+                          deque[rear] = item;
+                          System.out.println("Inserted " + item + " at the rear of the deque.");
+                      }
+                  }
+              
+                  public int deleteFront() {
+                      if (isEmpty()) {
+                          System.out.println("Deque underflow! Cannot delete from the front.");
+                          return -1;
+                      } else {
+                          int item = deque[front];
+                          if (front == rear) {
+                              front = rear = -1;
+                          } else if (front == capacity - 1) {
+                              front = 0;
+                          } else {
+                              front++;
+                          }
+                          System.out.println("Deleted " + item + " from the front of the deque.");
+                          return item;
+                      }
+                  }
+              
+                  public int deleteRear() {
+                      if (isEmpty()) {
+                          System.out.println("Deque underflow! Cannot delete from the rear.");
+                          return -1;
+                      } else {
+                          int item = deque[rear];
+                          if (front == rear) {
+                              front = rear = -1;
+                          } else if (rear == 0) {
+                              rear = capacity - 1;
+                          } else {
+                              rear--;
+                          }
+                          System.out.println("Deleted " + item + " from the rear of the deque.");
+                          return item;
+                      }
+                  }
+              
+                  public void display() {
+                      if (isEmpty()) {
+                          System.out.println("Deque is empty!");
+                      } else {
+                          System.out.println("Deque elements are:");
+                          if (front <= rear) {
+                              for (int i = front; i <= rear; i++) {
+                                  System.out.println(deque[i]);
+                              }
+                          } else {
+                              for (int i = front; i < capacity; i++) {
+                                  System.out.println(deque[i]);
+                              }
+                              for (int i = 0; i <= rear; i++) {
+                                  System.out.println(deque[i]);
+                              }
+                          }
+                      }
+                  }
+              
+                  public static void main(String[] args) {
+                      Deque deque = new Deque(5);
+                      deque.insertFront(1);
+                      deque.insertFront(2);
+                      deque.insertRear(3);
+                      deque.display();
+                      deque.deleteFront();
+                      deque.deleteRear();
+                      deque.display();
+                  }
+              }
+                
+              
+              </code>
+            </pre>
+          </div>
+  
+          <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab">
+            <pre>
+              <code class="language-python">
+                
+                class HashTable:
+                    def __init__(self, capacity):
+                        self.capacity = capacity
+                        self.table = [[] for _ in range(capacity)]
+
+                    def hash_func(self, key):
+                        return hash(key) % self.capacity
+
+                    def insert(self, key, value):
+                        index = self.hash_func(key)
+                        for entry in self.table[index]:
+                            if entry[0] == key:
+                                entry[1] = value
+                                return
+                        self.table[index].append([key, value])
+
+                    def delete(self, key):
+                        index = self.hash_func(key)
+                        bucket = self.table[index]
+                        for i in range(len(bucket)):
+                            if bucket[i][0] == key:
+                                del bucket[i]
+                                return
+
+                    def search(self, key):
+                        index = self.hash_func(key)
+                        bucket = self.table[index]
+                        for entry in bucket:
+                            if entry[0] == key:
+                                return entry[1]
+                        return None
+
+                # Example usage:
+                hash_table = HashTable(10)
+                hash_table.insert("apple", 5)
+                hash_table.insert("banana", 2)
+                hash_table.insert("orange", 7)
+
+                print(hash_table.search("banana"))  # Output: 2
+
+                hash_table.delete("banana")
+                print(hash_table.search("banana"))  # Output: None
+
+
+              </code>
+            </pre>
+          </div>
+  
+        </div>
+  
+  
+        <h1 class="array-subheading toping"><i class="fas fa-info-circle icon"></i>Implementing Deque using Linked Lists :</h1>
+        <p class="array-text-one">
+          Here is the implementation of Deque using Linked List in three different languages
+        </p>
+  
+        <div class="array-code ">
+          <ul class=" nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class=" lang-clr nav-link active" id="cpp-tab" data-bs-toggle="tab" href="#cpp2" role="tab" aria-controls="cpp" aria-selected="true">C++</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class=" lang-clr nav-link" id="java-tab" data-bs-toggle="tab" href="#java2" role="tab" aria-controls="java" aria-selected="false">Java</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="lang-clr nav-link" id="python-tab" data-bs-toggle="tab" href="#python2" role="tab" aria-controls="python" aria-selected="false">Python</a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class=" array-code tab-content" id="myTabContent">
+  
+          <div class="tab-pane fade show active" id="cpp2" role="tabpanel" aria-labelledby="cpp-tab">
+            <pre>
+              <code class="language-cpp">
+  
+                  #include &lt;iostream&gt;
+
+                  class Node {
+                  public:
+                      int data;
+                      Node* next;
+                      Node* prev;
+                  
+                      Node(int data) {
+                          this->data = data;
+                          this->next = nullptr;
+                          this->prev = nullptr;
+                      }
+                  };
+                  
+                  class Deque {
+                  private:
+                      Node* front;
+                      Node* rear;
+                  
+                  public:
+                      Deque() {
+                          front = nullptr;
+                          rear = nullptr;
+                      }
+                  
+                      bool is_empty() {
+                          return front == nullptr;
+                      }
+                  
+                      void insert_front(int item) {
+                          Node* new_node = new Node(item);
+                          if (is_empty()) {
+                              front = rear = new_node;
+                          } else {
+                              new_node->next = front;
+                              front->prev = new_node;
+                              front = new_node;
+                          }
+                          std::cout << "Inserted " << item << " at the front of the deque." << std::endl;
+                      }
+                  
+                      void insert_rear(int item) {
+                          Node* new_node = new Node(item);
+                          if (is_empty()) {
+                              front = rear = new_node;
+                          } else {
+                              rear->next = new_node;
+                              new_node->prev = rear;
+                              rear = new_node;
+                          }
+                          std::cout << "Inserted " << item << " at the rear of the deque." << std::endl;
+                      }
+                  
+                      int delete_front() {
+                          if (is_empty()) {
+                              std::cout << "Deque underflow! Cannot delete from the front." << std::endl;
+                              return -1;
+                          } else {
+                              int item = front->data;
+                              if (front == rear) {
+                                  delete front;
+                                  front = rear = nullptr;
+                              } else {
+                                  Node* temp = front;
+                                  front = front->next;
+                                  front->prev = nullptr;
+                                  delete temp;
+                              }
+                              std::cout << "Deleted " << item << " from the front of the deque." << std::endl;
+                              return item;
+                          }
+                      }
+                  
+                      int delete_rear() {
+                          if (is_empty()) {
+                              std::cout << "Deque underflow! Cannot delete from the rear." << std::endl;
+                              return -1;
+                          } else {
+                              int item = rear->data;
+                              if (front == rear) {
+                                  delete rear;
+                                  front = rear = nullptr;
+                              } else {
+                                  Node* temp = rear;
+                                  rear = rear->prev;
+                                  rear->next = nullptr;
+                                  delete temp;
+                              }
+                              std::cout << "Deleted " << item << " from the rear of the deque." << std::endl;
+                              return item;
+                          }
+                      }
+                  
+                      void display() {
+                          if (is_empty()) {
+                              std::cout << "Deque is empty!" << std::endl;
+                          } else {
+                              std::cout << "Deque elements are:" << std::endl;
+                              Node* current = front;
+                              while (current != nullptr) {
+                                  std::cout << current->data << std::endl;
+                                  current = current->next;
+                              }
+                          }
+                      }
+                  
+                      ~Deque() {
+                          while (front != nullptr) {
+                              Node* temp = front;
+                              front = front->next;
+                              delete temp;
+                          }
+                      }
+                  };
+                  
+                  int main() {
+                      Deque deque;
+                      deque.insert_front(1);
+                      deque.insert_front(2);
+                      deque.insert_rear(3);
+                      deque.display();
+                      deque.delete_front();
+                      deque.delete_rear();
+                      deque.display();
+                      return 0;
+                  }
+                  
+                  
+                  
+  
+              </code>
+            </pre>
+          </div>
+  
+          <div class="tab-pane fade" id="java2" role="tabpanel" aria-labelledby="java-tab">
+            <pre>
+              <code class="language-java">
+          
+                public class Deque {
+                  private Node front;
+                  private Node rear;
+              
+                  private class Node {
+                      int data;
+                      Node next;
+                      Node prev;
+              
+                      Node(int data) {
+                          this.data = data;
+                          this.next = null;
+                          this.prev = null;
+                      }
+                  }
+              
+                  public Deque() {
+                      this.front = null;
+                      this.rear = null;
+                  }
+              
+                  public boolean isEmpty() {
+                      return front == null;
+                  }
+              
+                  public void insertFront(int item) {
+                      Node new_node = new Node(item);
+                      if (isEmpty()) {
+                          front = rear = new_node;
+                      } else {
+                          new_node.next = front;
+                          front.prev = new_node;
+                          front = new_node;
+                      }
+                      System.out.println("Inserted " + item + " at the front of the deque.");
+                  }
+              
+                  public void insertRear(int item) {
+                      Node new_node = new Node(item);
+                      if (isEmpty()) {
+                          front = rear = new_node;
+                      } else {
+                          rear.next = new_node;
+                          new_node.prev = rear;
+                          rear = new_node;
+                      }
+                      System.out.println("Inserted " + item + " at the rear of the deque.");
+                  }
+              
+                  public int deleteFront() {
+                      if (isEmpty()) {
+                          System.out.println("Deque underflow! Cannot delete from the front.");
+                          return -1;
+                      } else {
+                          int item = front.data;
+                          if (front == rear) {
+                              front = rear = null;
+                          } else {
+                              front = front.next;
+                              front.prev = null;
+                          }
+                          System.out.println("Deleted " + item + " from the front of the deque.");
+                          return item;
+                      }
+                  }
+              
+                  public int deleteRear() {
+                      if (isEmpty()) {
+                          System.out.println("Deque underflow! Cannot delete from the rear.");
+                          return -1;
+                      } else {
+                          int item = rear.data;
+                          if (front == rear) {
+                              front = rear = null;
+                          } else {
+                              rear = rear.prev;
+                              rear.next = null;
+                          }
+                          System.out.println("Deleted " + item + " from the rear of the deque.");
+                          return item;
+                      }
+                  }
+              
+                  public void display() {
+                      if (isEmpty()) {
+                          System.out.println("Deque is empty!");
+                      } else {
+                          System.out.println("Deque elements are:");
+                          Node current = front;
+                          while (current != null) {
+                              System.out.println(current.data);
+                              current = current.next;
+                          }
+                      }
+                  }
+              
+                  public static void main(String[] args) {
+                      Deque deque = new Deque();
+                      deque.insertFront(1);
+                      deque.insertFront(2);
+                      deque.insertRear(3);
+                      deque.display();
+                      deque.deleteFront();
+                      deque.deleteRear();
+                      deque.display();
+                  }
+              }
+              
+              
+              </code>
+            </pre>
+          </div>
+  
+          <div class="tab-pane fade" id="python2" role="tabpanel" aria-labelledby="python-tab">
+            <pre>
+              <code class="language-python">
+                
+                class Node:
+                    def __init__(self, data):
+                        self.data = data
+                        self.next = None
+                        self.prev = None
+
+                class Deque:
+                    def __init__(self):
+                        self.front = None
+                        self.rear = None
+
+                    def is_empty(self):
+                        return self.front is None
+
+                    def insert_front(self, item):
+                        new_node = Node(item)
+                        if self.is_empty():
+                            self.front = self.rear = new_node
+                        else:
+                            new_node.next = self.front
+                            self.front.prev = new_node
+                            self.front = new_node
+                        print(f"Inserted {item} at the front of the deque.")
+
+                    def insert_rear(self, item):
+                        new_node = Node(item)
+                        if self.is_empty():
+                            self.front = self.rear = new_node
+                        else:
+                            self.rear.next = new_node
+                            new_node.prev = self.rear
+                            self.rear = new_node
+                        print(f"Inserted {item} at the rear of the deque.")
+
+                    def delete_front(self):
+                        if self.is_empty():
+                            print("Deque underflow! Cannot delete from the front.")
+                            return None
+                        else:
+                            item = self.front.data
+                            if self.front == self.rear:
+                                self.front = self.rear = None
+                            else:
+                                self.front = self.front.next
+                                self.front.prev = None
+                            print(f"Deleted {item} from the front of the deque.")
+                            return item
+
+                    def delete_rear(self):
+                        if self.is_empty():
+                            print("Deque underflow! Cannot delete from the rear.")
+                            return None
+                        else:
+                            item = self.rear.data
+                            if self.front == self.rear:
+                                self.front = self.rear = None
+                            else:
+                                self.rear = self.rear.prev
+                                self.rear.next = None
+                            print(f"Deleted {item} from the rear of the deque.")
+                            return item
+
+                    def display(self):
+                        if self.is_empty():
+                            print("Deque is empty!")
+                        else:
+                            print("Deque elements are:")
+                            current = self.front
+                            while current:
+                                print(current.data)
+                                current = current.next
+
+                # Example usage:
+                deque = Deque()
+                deque.insert_front(1)
+                deque.insert_front(2)
+                deque.insert_rear(3)
+                deque.display()
+                deque.delete_front()
+                deque.delete_rear()
+                deque.display()
+
+
+         
+              </code>
+            </pre>
+          </div>
+  
+        </div>
+  
+        
+  
+  
+        
+  
+  
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="prism.js"></script>
+  </body>
+</html>

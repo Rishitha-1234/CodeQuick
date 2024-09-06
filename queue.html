@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Queue</title>
+
+    <link href="datastruct.css" rel="stylesheet">
+    <link href="proglang.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="prism.css" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+
+          <div class="navbar-nav icon">
+            <div class="logo-one">
+                <i class="fa-solid fa-code logo"></i>
+            </div>
+            <div class="txt">
+                <a class="nav-link active" aria-current="page" href="index.html">CodeQuick.in</a>
+            </div>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Programming Languages
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="cpp.html">C++</a></li>
+                  <li><a class="dropdown-item" href="c.html">C</a></li>
+                  <li><a class="dropdown-item" href="python.html">Python</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Data Structures
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="arrays.html">Arrays</a></li>
+                  <li><a class="dropdown-item" href="strings.html">Strings</a></li>
+                  <li><a class="dropdown-item" href="linkedlist.html">Linked List</a></li>
+                  <li><a class="dropdown-item" href="stack.html">Stack</a></li>
+                  <li><a class="dropdown-item" href="queue.html">Queue</a></li>
+                  <li><a class="dropdown-item" href="dequeue.html">Deque</a></li>
+                  <li><a class="dropdown-item" href="hashing.html">Hash Table</a></li>
+                  <li><a class="dropdown-item" href="tree.html">Tree</a></li>
+                  <li><a class="dropdown-item" href="heap.html">Heap</a></li>
+                  <li><a class="dropdown-item" href="graph.html">Graph</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Algorithms
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="searchin_sorting.html">Searching and Sorting</a></li>
+                  <li><a class="dropdown-item" href="two_pointer.html">Two Pointer</a></li>
+                  <li><a class="dropdown-item" href="prefix_sum.html">Prefix Sum</a></li>
+                  <li><a class="dropdown-item" href="kadane.html">Kadane</a></li>
+                  <li><a class="dropdown-item" href="kmp.html">KMP</a></li>
+                  <li><a class="dropdown-item" href="eucledian.html">Euclidean Algorithm for GCD</a></li>
+                  <li><a class="dropdown-item" href="hare.html">Hare and tortoise</a></li>
+                  <li><a class="dropdown-item" href="dikstra.html">Dijkstra's Algorithm</a></li>
+                  <li><a class="dropdown-item" href="bellman.html">Bellman-Ford Algorithm</a></li>
+                  <li><a class="dropdown-item" href="floyd.html">Floyd-Warshall Algorithm</a></li>
+                  <li><a class="dropdown-item" href="prims.html">Prim's Algorithm</a></li>
+                  <li><a class="dropdown-item" href="kruskal.html">Kruskal Algorithm</a></li>
+                  <li><a class="dropdown-item" href="kosaraju.html">Kosaraju's Algorithm</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+      </nav>
+
+
+      <!-- HERO SECTION -->
+
+      <div class="hero bg-dark-subtle">
+        <h1 class="array-heading"><i class="fas fa-database icon"></i> Queue </h1>
+        <h1 class="array-subheading"><i class="fas fa-info-circle icon"></i>Implementing Queue using Arrays :</h1>
+        <p class="array-text-one">
+          Queue follows <span class="highlight">First In First Out (FIFO)</span>,meaning the first added element is the first to be removed. 
+        </p>
+  
+        <div class="array-code ">
+          <ul class=" nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class=" lang-clr nav-link active" id="cpp-tab" data-bs-toggle="tab" href="#cpp" role="tab" aria-controls="cpp" aria-selected="true">C++</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class=" lang-clr nav-link" id="java-tab" data-bs-toggle="tab" href="#java" role="tab" aria-controls="java" aria-selected="false">Java</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="lang-clr nav-link" id="python-tab" data-bs-toggle="tab" href="#python" role="tab" aria-controls="python" aria-selected="false">Python</a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class=" array-code tab-content" id="myTabContent">
+  
+          <div class="tab-pane fade show active" id="cpp" role="tabpanel" aria-labelledby="cpp-tab">
+            <pre>
+              <code class="language-cpp">
+                #include &lt; bits/stdc++.h &gt;
+
+                  class Queue {
+                  private:
+                      int size;
+                      int* queue;
+                      int front;
+                      int rear;
+                  
+                  public:
+                      Queue(int size) {
+                          this->size = size;
+                          queue = new int[size];
+                          front = rear = -1;
+                      }
+                  
+                      bool is_empty() {
+                          return front == -1;
+                      }
+                  
+                      bool is_full() {
+                          return (rear + 1) % size == front;
+                      }
+                  
+                      void enqueue(int item) {
+                          if (is_full()) {
+                              std::cout << "Queue overflow! Cannot enqueue the item." << std::endl;
+                          } else {
+                              if (front == -1) {
+                                  front = 0;
+                              }
+                              rear = (rear + 1) % size;
+                              queue[rear] = item;
+                              std::cout << "Enqueued " << item << " to the queue." << std::endl;
+                          }
+                      }
+                  
+                      int dequeue() {
+                          if (is_empty()) {
+                              std::cout << "Queue underflow! Cannot dequeue an item." << std::endl;
+                              return -1;
+                          } else {
+                              int item = queue[front];
+                              if (front == rear) {
+                                  front = rear = -1;
+                              } else {
+                                  front = (front + 1) % size;
+                              }
+                              std::cout << "Dequeued " << item << " from the queue." << std::endl;
+                              return item;
+                          }
+                      }
+                  
+                      int peek() {
+                          if (is_empty()) {
+                              std::cout << "Queue is empty! Nothing to peek." << std::endl;
+                              return -1;
+                          } else {
+                              return queue[front];
+                          }
+                      }
+                  
+                      void display() {
+                          if (is_empty()) {
+                              std::cout << "Queue is empty!" << std::endl;
+                          } else {
+                              std::cout << "Queue elements are:" << std::endl;
+                              int i = front;
+                              while (true) {
+                                  std::cout << queue[i] << std::endl;
+                                  if (i == rear) {
+                                      break;
+                                  }
+                                  i = (i + 1) % size;
+                              }
+                          }
+                      }
+                  
+                      ~Queue() {
+                          delete[] queue;
+                      }
+                  };
+                  
+                  int main() {
+                      Queue queue(5);
+                      queue.enqueue(1);
+                      queue.enqueue(2);
+                      queue.enqueue(3);
+                      queue.display();
+                      queue.dequeue();
+                      queue.display();
+                      std::cout << "Front element is " << queue.peek() << std::endl;
+                      return 0;
+                  }
+                  
+                  
+              </code>
+            </pre>
+          </div>
+  
+          <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
+            <pre>
+              <code class="language-java">
+                public class Queue {
+                  private int size;
+                  private int[] queue;
+                  private int front;
+                  private int rear;
+              
+                  public Queue(int size) {
+                      this.size = size;
+                      this.queue = new int[size];
+                      this.front = this.rear = -1;
+                  }
+              
+                  public boolean isEmpty() {
+                      return front == -1;
+                  }
+              
+                  public boolean isFull() {
+                      return (rear + 1) % size == front;
+                  }
+              
+                  public void enqueue(int item) {
+                      if (isFull()) {
+                          System.out.println("Queue overflow! Cannot enqueue the item.");
+                      } else {
+                          if (front == -1) {
+                              front = 0;
+                          }
+                          rear = (rear + 1) % size;
+                          queue[rear] = item;
+                          System.out.println("Enqueued " + item + " to the queue.");
+                      }
+                  }
+              
+                  public int dequeue() {
+                      if (isEmpty()) {
+                          System.out.println("Queue underflow! Cannot dequeue an item.");
+                          return -1;
+                      } else {
+                          int item = queue[front];
+                          if (front == rear) {
+                              front = rear = -1;
+                          } else {
+                              front = (front + 1) % size;
+                          }
+                          System.out.println("Dequeued " + item + " from the queue.");
+                          return item;
+                      }
+                  }
+              
+                  public int peek() {
+                      if (isEmpty()) {
+                          System.out.println("Queue is empty! Nothing to peek.");
+                          return -1;
+                      } else {
+                          return queue[front];
+                      }
+                  }
+              
+                  public void display() {
+                      if (isEmpty()) {
+                          System.out.println("Queue is empty!");
+                      } else {
+                          System.out.println("Queue elements are:");
+                          int i = front;
+                          while (true) {
+                              System.out.println(queue[i]);
+                              if (i == rear) {
+                                  break;
+                              }
+                              i = (i + 1) % size;
+                          }
+                      }
+                  }
+              
+                  public static void main(String[] args) {
+                      Queue queue = new Queue(5);
+                      queue.enqueue(1);
+                      queue.enqueue(2);
+                      queue.enqueue(3);
+                      queue.display();
+                      queue.dequeue();
+                      queue.display();
+                      System.out.println("Front element is " + queue.peek());
+                  }
+              }              
+              
+              </code>
+            </pre>
+          </div>
+  
+          <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab">
+            <pre>
+              <code class="language-python">
+                class Queue:
+                    def __init__(self, size):
+                        self.size = size
+                        self.queue = [None] * size
+                        self.front = self.rear = -1
+
+                    def is_empty(self):
+                        return self.front == -1
+
+                    def is_full(self):
+                        return (self.rear + 1) % self.size == self.front
+
+                    def enqueue(self, item):
+                        if self.is_full():
+                            print("Queue overflow! Cannot enqueue the item.")
+                        else:
+                            if self.front == -1:
+                                self.front = 0
+                            self.rear = (self.rear + 1) % self.size
+                            self.queue[self.rear] = item
+                            print(f"Enqueued {item} to the queue.")
+
+                    def dequeue(self):
+                        if self.is_empty():
+                            print("Queue underflow! Cannot dequeue an item.")
+                            return None
+                        else:
+                            item = self.queue[self.front]
+                            if self.front == self.rear:
+                                self.front = self.rear = -1
+                            else:
+                                self.front = (self.front + 1) % self.size
+                            print(f"Dequeued {item} from the queue.")
+                            return item
+
+                    def peek(self):
+                        if self.is_empty():
+                            print("Queue is empty! Nothing to peek.")
+                            return None
+                        else:
+                            return self.queue[self.front]
+
+                    def display(self):
+                        if self.is_empty():
+                            print("Queue is empty!")
+                        else:
+                            print("Queue elements are:")
+                            i = self.front
+                            while True:
+                                print(self.queue[i])
+                                if i == self.rear:
+                                    break
+                                i = (i + 1) % self.size
+
+                # Example usage:
+                queue = Queue(5)
+                queue.enqueue(1)
+                queue.enqueue(2)
+                queue.enqueue(3)
+                queue.display()
+                queue.dequeue()
+                queue.display()
+                print(f"Front element is {queue.peek()}")
+
+
+              </code>
+            </pre>
+          </div>
+  
+        </div>
+  
+  
+        <h1 class="array-subheading toping"><i class="fas fa-info-circle icon"></i>Implementing Queue using Linked Lists :</h1>
+        <p class="array-text-one">
+          Here is the implementation of Queue using Linked List in three different languages
+        </p>
+  
+        <div class="array-code ">
+          <ul class=" nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class=" lang-clr nav-link active" id="cpp-tab" data-bs-toggle="tab" href="#cpp2" role="tab" aria-controls="cpp" aria-selected="true">C++</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class=" lang-clr nav-link" id="java-tab" data-bs-toggle="tab" href="#java2" role="tab" aria-controls="java" aria-selected="false">Java</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="lang-clr nav-link" id="python-tab" data-bs-toggle="tab" href="#python2" role="tab" aria-controls="python" aria-selected="false">Python</a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class=" array-code tab-content" id="myTabContent">
+  
+          <div class="tab-pane fade show active" id="cpp2" role="tabpanel" aria-labelledby="cpp-tab">
+            <pre>
+              <code class="language-cpp">
+  
+                #include &lt;iostream&gt;
+
+                  class Node {
+                  public:
+                      int data;
+                      Node* next;
+                  
+                      Node(int data) {
+                          this->data = data;
+                          this->next = nullptr;
+                      }
+                  };
+                  
+                  class Queue {
+                  private:
+                      Node* front;
+                      Node* rear;
+                  
+                  public:
+                      Queue() {
+                          front = nullptr;
+                          rear = nullptr;
+                      }
+                  
+                      bool isEmpty() {
+                          return front == nullptr;
+                      }
+                  
+                      void enqueue(int item) {
+                          Node* newNode = new Node(item);
+                          if (rear == nullptr) {
+                              front = rear = newNode;
+                          } else {
+                              rear->next = newNode;
+                              rear = newNode;
+                          }
+                          std::cout << "Enqueued " << item << " to the queue." << std::endl;
+                      }
+                  
+                      int dequeue() {
+                          if (isEmpty()) {
+                              std::cout << "Queue underflow! Cannot dequeue an item." << std::endl;
+                              return -1;
+                          } else {
+                              int item = front->data;
+                              Node* temp = front;
+                              front = front->next;
+                              if (front == nullptr) {
+                                  rear = nullptr;
+                              }
+                              delete temp;
+                              std::cout << "Dequeued " << item << " from the queue." << std::endl;
+                              return item;
+                          }
+                      }
+                  
+                      int peek() {
+                          if (isEmpty()) {
+                              std::cout << "Queue is empty! Nothing to peek." << std::endl;
+                              return -1;
+                          } else {
+                              return front->data;
+                          }
+                      }
+                  
+                      void display() {
+                          if (isEmpty()) {
+                              std::cout << "Queue is empty!" << std::endl;
+                          } else {
+                              std::cout << "Queue elements are:" << std::endl;
+                              Node* current = front;
+                              while (current != nullptr) {
+                                  std::cout << current->data << std::endl;
+                                  current = current->next;
+                              }
+                          }
+                      }
+                  };
+                  
+                  int main() {
+                      Queue queue;
+                      queue.enqueue(1);
+                      queue.enqueue(2);
+                      queue.enqueue(3);
+                      queue.display();
+                      queue.dequeue();
+                      queue.display();
+                      std::cout << "Front element is " << queue.peek() << std::endl;
+                      return 0;
+                  }
+                  
+                  
+  
+              </code>
+            </pre>
+          </div>
+  
+          <div class="tab-pane fade" id="java2" role="tabpanel" aria-labelledby="java-tab">
+            <pre>
+              <code class="language-java">
+          
+                public class Queue {
+                  private Node front;
+                  private Node rear;
+              
+                  private class Node {
+                      int data;
+                      Node next;
+              
+                      Node(int data) {
+                          this.data = data;
+                          this.next = null;
+                      }
+                  }
+              
+                  public Queue() {
+                      this.front = null;
+                      this.rear = null;
+                  }
+              
+                  public boolean isEmpty() {
+                      return front == null;
+                  }
+              
+                  public void enqueue(int item) {
+                      Node newNode = new Node(item);
+                      if (rear == null) {
+                          front = rear = newNode;
+                      } else {
+                          rear.next = newNode;
+                          rear = newNode;
+                      }
+                      System.out.println("Enqueued " + item + " to the queue.");
+                  }
+              
+                  public int dequeue() {
+                      if (isEmpty()) {
+                          System.out.println("Queue underflow! Cannot dequeue an item.");
+                          return -1;
+                      } else {
+                          int item = front.data;
+                          front = front.next;
+                          if (front == null) {
+                              rear = null;
+                          }
+                          System.out.println("Dequeued " + item + " from the queue.");
+                          return item;
+                      }
+                  }
+              
+                  public int peek() {
+                      if (isEmpty()) {
+                          System.out.println("Queue is empty! Nothing to peek.");
+                          return -1;
+                      } else {
+                          return front.data;
+                      }
+                  }
+              
+                  public void display() {
+                      if (isEmpty()) {
+                          System.out.println("Queue is empty!");
+                      } else {
+                          System.out.println("Queue elements are:");
+                          Node current = front;
+                          while (current != null) {
+                              System.out.println(current.data);
+                              current = current.next;
+                          }
+                      }
+                  }
+              
+                  public static void main(String[] args) {
+                      Queue queue = new Queue();
+                      queue.enqueue(1);
+                      queue.enqueue(2);
+                      queue.enqueue(3);
+                      queue.display();
+                      queue.dequeue();
+                      queue.display();
+                      System.out.println("Front element is " + queue.peek());
+                  }
+              }
+              
+              </code>
+            </pre>
+          </div>
+  
+          <div class="tab-pane fade" id="python2" role="tabpanel" aria-labelledby="python-tab">
+            <pre>
+              <code class="language-python">
+                class Node:
+                    def __init__(self, data):
+                        self.data = data
+                        self.next = None
+
+                class Queue:
+                    def __init__(self):
+                        self.front = None
+                        self.rear = None
+
+                    def is_empty(self):
+                        return self.front is None
+
+                    def enqueue(self, item):
+                        new_node = Node(item)
+                        if self.rear is None:
+                            self.front = self.rear = new_node
+                        else:
+                            self.rear.next = new_node
+                            self.rear = new_node
+                        print(f"Enqueued {item} to the queue.")
+
+                    def dequeue(self):
+                        if self.is_empty():
+                            print("Queue underflow! Cannot dequeue an item.")
+                            return None
+                        else:
+                            item = self.front.data
+                            self.front = self.front.next
+                            if self.front is None:
+                                self.rear = None
+                            print(f"Dequeued {item} from the queue.")
+                            return item
+
+                    def peek(self):
+                        if self.is_empty():
+                            print("Queue is empty! Nothing to peek.")
+                            return None
+                        else:
+                            return self.front.data
+
+                    def display(self):
+                        if self.is_empty():
+                            print("Queue is empty!")
+                        else:
+                            print("Queue elements are:")
+                            current = self.front
+                            while current:
+                                print(current.data)
+                                current = current.next
+
+                # Example usage:
+                queue = Queue()
+                queue.enqueue(1)
+                queue.enqueue(2)
+                queue.enqueue(3)
+                queue.display()
+                queue.dequeue()
+                queue.display()
+                print(f"Front element is {queue.peek()}")
+
+         
+              </code>
+            </pre>
+          </div>
+  
+        </div>
+  
+        
+  
+  
+        
+  
+  
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="prism.js"></script>
+  </body>
+</html>

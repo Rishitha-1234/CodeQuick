@@ -1,0 +1,1178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tree</title>
+
+    <link href="datastruct.css" rel="stylesheet">
+    <link href="proglang.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="prism.css" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+  <body class="bg-dark-subtle">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container-fluid">
+
+        <div class="navbar-nav icon">
+          <div class="logo-one">
+            <i class="fa-solid fa-code logo"></i>
+          </div>
+          <div class="txt">
+            <a class="nav-link active" aria-current="page" href="index.html">CodeQuick.in</a>
+          </div>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Programming Languages
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="cpp.html">C++</a></li>
+                <li><a class="dropdown-item" href="c.html">C</a></li>
+                <li><a class="dropdown-item" href="python.html">Python</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Data Structures
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="arrays.html">Arrays</a></li>
+                <li><a class="dropdown-item" href="strings.html">Strings</a></li>
+                <li><a class="dropdown-item" href="linkedlist.html">Linked List</a></li>
+                <li><a class="dropdown-item" href="stack.html">Stack</a></li>
+                <li><a class="dropdown-item" href="queue.html">Queue</a></li>
+                <li><a class="dropdown-item" href="dequeue.html">Deque</a></li>
+                <li><a class="dropdown-item" href="hashing.html">Hash Table</a></li>
+                <li><a class="dropdown-item" href="tree.html">Tree</a></li>
+                <li><a class="dropdown-item" href="heap.html">Heap</a></li>
+                <li><a class="dropdown-item" href="graph.html">Graph</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Algorithms
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="searchin_sorting.html">Searching and Sorting</a></li>
+                <li><a class="dropdown-item" href="two_pointer.html">Two Pointer</a></li>
+                <li><a class="dropdown-item" href="prefix_sum.html">Prefix Sum</a></li>
+                <li><a class="dropdown-item" href="kadane.html">Kadane</a></li>
+                <li><a class="dropdown-item" href="kmp.html">KMP</a></li>
+                <li><a class="dropdown-item" href="eucledian.html">Euclidean Algorithm for GCD</a></li>
+                <li><a class="dropdown-item" href="hare.html">Hare and tortoise</a></li>
+                <li><a class="dropdown-item" href="dikstra.html">Dijkstra's Algorithm</a></li>
+                <li><a class="dropdown-item" href="bellman.html">Bellman-Ford Algorithm</a></li>
+                <li><a class="dropdown-item" href="floyd.html">Floyd-Warshall Algorithm</a></li>
+                <li><a class="dropdown-item" href="prims.html">Prim's Algorithm</a></li>
+                <li><a class="dropdown-item" href="kruskal.html">Kruskal Algorithm</a></li>
+                <li><a class="dropdown-item" href="kosaraju.html">Kosaraju's Algorithm</a></li>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <div class="hero bg-dark-subtle">
+      <h1 class="array-heading"><i class="fas fa-database icon"></i> Tree </h1>
+      <h1 class="array-subheading"><i class="fas fa-info-circle icon"></i> Understanding Pre-order traversal in tree :</h1>
+      <p class="array-text-one">
+        In preorder traversal, we visit the <span class="highlight"> root node</span> first, followed by the <span class="highlight"> left subtree </span>, and then the <span class="highlight"> right subtree</span>.
+      </p>
+
+
+      <h1 class="array-subheading"><i class="fas fa-info-circle icon"></i> Pre-order recursive</h1>
+
+      <div class="array-code ">
+        <ul class=" nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link active" id="cpp-tab" data-bs-toggle="tab" href="#cpp" role="tab" aria-controls="cpp" aria-selected="true">C++</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link" id="java-tab" data-bs-toggle="tab" href="#java" role="tab" aria-controls="java" aria-selected="false">Java</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="lang-clr nav-link" id="python-tab" data-bs-toggle="tab" href="#python" role="tab" aria-controls="python" aria-selected="false">Python</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class=" array-code tab-content" id="myTabContent">
+
+        <div class="tab-pane fade show active" id="cpp" role="tabpanel" aria-labelledby="cpp-tab">
+          <pre>
+            <code class="language-cpp">
+              #include <iostream>
+                using namespace std;
+                
+                // Definition of a Node in the binary tree
+                struct TreeNode {
+                    int val;
+                    TreeNode* left;
+                    TreeNode* right;
+                    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+                };
+                
+                // Recursive function for preorder traversal
+                void preorder(TreeNode* root) {
+                    if (root == nullptr) return;
+                    
+                    cout << root->val << " ";  // Visit the current node
+                    
+                    preorder(root->left);      // Recursively traverse left subtree
+                    preorder(root->right);     // Recursively traverse right subtree
+                }
+                
+                int main() {
+                    // Constructing a sample binary tree
+                    TreeNode* root = new TreeNode(1);
+                    root->left = new TreeNode(2);
+                    root->right = new TreeNode(3);
+                    root->left->left = new TreeNode(4);
+                    root->left->right = new TreeNode(5);
+                
+                    cout << "Preorder traversal: ";
+                    preorder(root);
+                    cout << endl;
+                
+                    return 0;
+                }
+                
+            </code>
+          </pre>
+        </div>
+
+        <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
+          <pre>
+            <code class="language-java">
+              // Definition of a Node in the binary tree
+              class TreeNode {
+                  int val;
+                  TreeNode left;
+                  TreeNode right;
+
+                  TreeNode(int x) {
+                      val = x;
+                  }
+              }
+
+              public class TreeTraversal {
+                  // Recursive function for preorder traversal
+                  public static void preorder(TreeNode root) {
+                      if (root == null) return;
+                      
+                      System.out.print(root.val + " ");  // Visit the current node
+                      
+                      preorder(root.left);              // Recursively traverse left subtree
+                      preorder(root.right);             // Recursively traverse right subtree
+                  }
+
+                  public static void main(String[] args) {
+                      // Constructing a sample binary tree
+                      TreeNode root = new TreeNode(1);
+                      root.left = new TreeNode(2);
+                      root.right = new TreeNode(3);
+                      root.left.left = new TreeNode(4);
+                      root.left.right = new TreeNode(5);
+
+                      System.out.print("Preorder traversal: ");
+                      preorder(root);
+                      System.out.println();
+                  }
+              }
+
+            </code>
+          </pre>
+        </div>
+
+        <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab">
+          <pre>
+            <code class="language-python">
+              # Definition of a Node in the binary tree
+              class TreeNode:
+                  def __init__(self, val=0, left=None, right=None):
+                      self.val = val
+                      self.left = left
+                      self.right = right
+
+              # Recursive function for preorder traversal
+              def preorder(root):
+                  if root is None:
+                      return
+                  
+                  print(root.val, end=" ")   # Visit the current node
+                  
+                  preorder(root.left)        # Recursively traverse left subtree
+                  preorder(root.right)       # Recursively traverse right subtree
+
+              # Example usage
+              if __name__ == "__main__":
+                  # Constructing a sample binary tree
+                  root = TreeNode(1)
+                  root.left = TreeNode(2)
+                  root.right = TreeNode(3)
+                  root.left.left = TreeNode(4)
+                  root.left.right = TreeNode(5)
+
+                  print("Preorder traversal:", end=" ")
+                  preorder(root)
+                  print()
+
+            </code>
+          </pre>
+        </div>
+
+      </div>
+
+      
+      <h1 class="array-subheading"><i class="fas fa-info-circle icon"></i> Pre-order with out Recursion</h1>
+
+      <div class="array-code ">
+        <ul class=" nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link active" id="cpp-tab" data-bs-toggle="tab" href="#cpp11" role="tab" aria-controls="cpp" aria-selected="true">C++</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link" id="java-tab" data-bs-toggle="tab" href="#java11" role="tab" aria-controls="java" aria-selected="false">Java</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="lang-clr nav-link" id="python-tab" data-bs-toggle="tab" href="#python11" role="tab" aria-controls="python" aria-selected="false">Python</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class=" array-code tab-content" id="myTabContent">
+
+
+        <div class="tab-pane fade show active" id="cpp11" role="tabpanel" aria-labelledby="cpp-tab">
+          <pre>
+            <code class="language-cpp">
+              
+                #include &lt;iostream&gt;
+                #include &lt;stack&gt;
+                using namespace std;
+                
+                // Definition of a Node in the binary tree
+                struct TreeNode {
+                    int val;
+                    TreeNode* left;
+                    TreeNode* right;
+                    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+                };
+                
+                // Non-recursive function for preorder traversal
+                void preorder(TreeNode* root) {
+                    if (root == nullptr) return;
+                    
+                    stack&lt;TreeNode*&gt; stack;
+                    stack.push(root);
+                    
+                    while (!stack.empty()) {
+                        TreeNode* current = stack.top();
+                        stack.pop();
+                        
+                        cout << current->val << " ";  // Visit the current node
+                        
+                        if (current->right != nullptr) {
+                            stack.push(current->right); // Push right subtree
+                        }
+                        
+                        if (current->left != nullptr) {
+                            stack.push(current->left);  // Push left subtree
+                        }
+                    }
+                }
+                
+                int main() {
+                    // Constructing a sample binary tree
+                    TreeNode* root = new TreeNode(1);
+                    root->left = new TreeNode(2);
+                    root->right = new TreeNode(3);
+                    root->left->left = new TreeNode(4);
+                    root->left->right = new TreeNode(5);
+                
+                    cout << "Preorder traversal: ";
+                    preorder(root);
+                    cout << endl;
+                
+                    return 0;
+                }
+                
+                
+            </code>
+          </pre>
+        </div>
+
+
+        <div class="tab-pane fade" id="java11" role="tabpanel" aria-labelledby="java-tab">
+          <pre>
+            <code class="language-java">
+              import java.util.Stack;
+
+              // Definition of a Node in the binary tree
+              class TreeNode {
+                  int val;
+                  TreeNode left;
+                  TreeNode right;
+
+                  TreeNode(int x) {
+                      val = x;
+                  }
+              }
+
+              public class TreeTraversal {
+                  // Non-recursive function for preorder traversal
+                  public static void preorder(TreeNode root) {
+                      if (root == null) return;
+                      
+                      Stack&lt;TreeNode&gt; stack = new Stack<>();
+                      stack.push(root);
+                      
+                      while (!stack.isEmpty()) {
+                          TreeNode current = stack.pop();
+                          System.out.print(current.val + " ");  // Visit the current node
+                          
+                          if (current.right != null) {
+                              stack.push(current.right);  // Push right subtree
+                          }
+                          
+                          if (current.left != null) {
+                              stack.push(current.left);   // Push left subtree
+                          }
+                      }
+                  }
+
+                  public static void main(String[] args) {
+                      // Constructing a sample binary tree
+                      TreeNode root = new TreeNode(1);
+                      root.left = new TreeNode(2);
+                      root.right = new TreeNode(3);
+                      root.left.left = new TreeNode(4);
+                      root.left.right = new TreeNode(5);
+
+                      System.out.print("Preorder traversal: ");
+                      preorder(root);
+                      System.out.println();
+                  }
+              }
+
+            </code>
+          </pre>
+        </div>
+        
+
+        <div class="tab-pane fade" id="python11" role="tabpanel" aria-labelledby="python-tab">
+          <pre>
+            <code class="language-python">
+              # Definition of a Node in the binary tree
+              class TreeNode:
+                  def __init__(self, val=0, left=None, right=None):
+                      self.val = val
+                      self.left = left
+                      self.right = right
+
+              # Non-recursive function for preorder traversal
+              def preorder(root):
+                  if root is None:
+                      return
+                  
+                  stack = [root]
+                  
+                  while stack:
+                      current = stack.pop()
+                      print(current.val, end=" ")  # Visit the current node
+                      
+                      if current.right:
+                          stack.append(current.right) # Push right subtree
+                      
+                      if current.left:
+                          stack.append(current.left)  # Push left subtree
+
+              # Example usage
+              if __name__ == "__main__":
+                  # Constructing a sample binary tree
+                  root = TreeNode(1)
+                  root.left = TreeNode(2)
+                  root.right = TreeNode(3)
+                  root.left.left = TreeNode(4)
+                  root.left.right = TreeNode(5)
+
+                  print("Preorder traversal:", end=" ")
+                  preorder(root)
+                  print()
+
+            </code>
+          </pre>
+        </div>
+
+      </div>
+
+      <h1 class="array-subheading"><i class="fas fa-info-circle icon"></i> Understanding In-order traversal in tree :</h1>
+      <p class="array-text-one">
+        In In-order traversal, we visit the <span class="highlight"> left subtree</span> first, followed by the <span class="highlight"> root node </span>, and then the <span class="highlight"> right subtree</span>.
+      </p>
+
+
+      <h1 class="array-subheading"><i class="fas fa-info-circle icon"></i> In-order recursive</h1>
+      <div class="array-code ">
+        <ul class=" nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link active" id="cpp-tab" data-bs-toggle="tab" href="#cpp2" role="tab" aria-controls="cpp" aria-selected="true">C++</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link" id="java-tab" data-bs-toggle="tab" href="#java2" role="tab" aria-controls="java" aria-selected="false">Java</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="lang-clr nav-link" id="python-tab" data-bs-toggle="tab" href="#python2" role="tab" aria-controls="python" aria-selected="false">Python</a>
+          </li>
+        </ul>
+      </div>
+
+
+
+      <div class=" array-code tab-content" id="myTabContent">
+
+        <div class="tab-pane fade show active" id="cpp2" role="tabpanel" aria-labelledby="cpp-tab">
+          <pre>
+            <code class="language-cpp">
+              #include &lt;iostream&gt;
+                using namespace std;
+                
+                class Node {
+                public:
+                    int value;
+                    Node* left;
+                    Node* right;
+                
+                    Node(int key) {
+                        value = key;
+                        left = right = nullptr;
+                    }
+                };
+                
+                void inorderTraversal(Node* root) {
+                    if (root != nullptr) {
+                        // Traverse the left subtree
+                        inorderTraversal(root->left);
+                        // Visit the root node
+                        cout << root->value << " ";
+                        // Traverse the right subtree
+                        inorderTraversal(root->right);
+                    }
+                }
+                
+                int main() {
+                    // Constructing the following binary tree
+                    //         1
+                    //       /   \
+                    //      2     3
+                    //     / \   / \
+                    //    4   5 6   7
+                    Node* root = new Node(1);
+                    root->left = new Node(2);
+                    root->right = new Node(3);
+                    root->left->left = new Node(4);
+                    root->left->right = new Node(5);
+                    root->right->left = new Node(6);
+                    root->right->right = new Node(7);
+                
+                    cout << "Inorder traversal of binary tree is: ";
+                    inorderTraversal(root);
+                    cout << endl;
+                
+                    return 0;
+                }
+                
+                
+            </code>
+          </pre>
+        </div>
+
+        <div class="tab-pane fade" id="java2" role="tabpanel" aria-labelledby="java-tab">
+          <pre>
+            <code class="language-java">
+              class Node {
+                int value;
+                Node left, right;
+            
+                public Node(int item) {
+                    value = item;
+                    left = right = null;
+                }
+            }
+            
+            public class BinaryTree {
+                Node root;
+            
+                // Inorder traversal function
+                void inorderTraversal(Node node) {
+                    if (node != null) {
+                        // Traverse the left subtree
+                        inorderTraversal(node.left);
+                        // Visit the root node
+                        System.out.print(node.value + " ");
+                        // Traverse the right subtree
+                        inorderTraversal(node.right);
+                    }
+                }
+            
+                public static void main(String[] args) {
+                    BinaryTree tree = new BinaryTree();
+            
+                    // Constructing the following binary tree
+                    //         1
+                    //       /   \
+                    //      2     3
+                    //     / \   / \
+                    //    4   5 6   7
+                    tree.root = new Node(1);
+                    tree.root.left = new Node(2);
+                    tree.root.right = new Node(3);
+                    tree.root.left.left = new Node(4);
+                    tree.root.left.right = new Node(5);
+                    tree.root.right.left = new Node(6);
+                    tree.root.right.right = new Node(7);
+            
+                    System.out.println("Inorder traversal of binary tree is:");
+                    tree.inorderTraversal(tree.root);
+                }
+            }
+            
+
+            </code>
+          </pre>
+        </div>
+
+        <div class="tab-pane fade" id="python2" role="tabpanel" aria-labelledby="python-tab">
+          <pre>
+            <code class="language-python">
+              class Node:
+                  def __init__(self, key):
+                      self.left = None
+                      self.right = None
+                      self.value = key
+
+              def inorder_traversal(root):
+                  if root:
+                      # Traverse the left subtree
+                      inorder_traversal(root.left)
+                      # Visit the root node
+                      print(root.value, end=' ')
+                      # Traverse the right subtree
+                      inorder_traversal(root.right)
+
+              # Example usage
+              # Constructing the following binary tree
+              #         1
+              #       /   \
+              #      2     3
+              #     / \   / \
+              #    4   5 6   7
+
+              root = Node(1)
+              root.left = Node(2)
+              root.right = Node(3)
+              root.left.left = Node(4)
+              root.left.right = Node(5)
+              root.right.left = Node(6)
+              root.right.right = Node(7)
+
+              print("Inorder traversal of binary tree is:")
+              inorder_traversal(root)
+
+
+            </code>
+          </pre>
+        </div>
+
+      </div>
+
+      
+      <h1 class="array-subheading"><i class="fas fa-info-circle icon"></i> In-order with out Recursion</h1>
+
+      <div class="array-code ">
+        <ul class=" nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link active" id="cpp-tab" data-bs-toggle="tab" href="#cpp21" role="tab" aria-controls="cpp" aria-selected="true">C++</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link" id="java-tab" data-bs-toggle="tab" href="#java21" role="tab" aria-controls="java" aria-selected="false">Java</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="lang-clr nav-link" id="python-tab" data-bs-toggle="tab" href="#python21" role="tab" aria-controls="python" aria-selected="false">Python</a>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class=" array-code tab-content" id="myTabContent">
+
+
+        <div class="tab-pane fade show active" id="cpp21" role="tabpanel" aria-labelledby="cpp-tab">
+          <pre>
+            <code class="language-cpp">
+              
+                #include &lt;iostream&gt;
+                #include &lt;stack&gt;
+                using namespace std;
+              
+                  class Node {
+                  public:
+                      int value;
+                      Node* left;
+                      Node* right;
+                  
+                      Node(int key) {
+                          value = key;
+                          left = right = nullptr;
+                      }
+                  };
+                  
+                  void inorderTraversal(Node* root) {
+                      stack<Node*> s;
+                      Node* current = root;
+                  
+                      while (current != nullptr || !s.empty()) {
+                          while (current != nullptr) {
+                              s.push(current);
+                              current = current->left;
+                          }
+                  
+                          current = s.top();
+                          s.pop();
+                          cout << current->value << " ";
+                          current = current->right;
+                      }
+                  }
+                  
+                  int main() {
+                      Node* root = new Node(1);
+                      root->left = new Node(2);
+                      root->right = new Node(3);
+                      root->left->left = new Node(4);
+                      root->left->right = new Node(5);
+                      root->right->left = new Node(6);
+                      root->right->right = new Node(7);
+                  
+                      cout << "Inorder traversal of binary tree is: ";
+                      inorderTraversal(root);
+                      cout << endl;
+                  
+                      return 0;
+                  }
+                  
+                
+            </code>
+          </pre>
+        </div>
+
+
+        <div class="tab-pane fade" id="java21" role="tabpanel" aria-labelledby="java-tab">
+          <pre>
+            <code class="language-java">
+              import java.util.Stack;
+
+              class Node {
+                  int value;
+                  Node left, right;
+
+                  public Node(int item) {
+                      value = item;
+                      left = right = null;
+                  }
+              }
+
+              public class BinaryTree {
+                  Node root;
+
+                  void inorderTraversal(Node node) {
+                      if (node == null) {
+                          return;
+                      }
+
+                      Stack<Node> stack = new Stack<>();
+                      Node current = node;
+
+                      while (current != null || !stack.isEmpty()) {
+                          while (current != null) {
+                              stack.push(current);
+                              current = current.left;
+                          }
+
+                          current = stack.pop();
+                          System.out.print(current.value + " ");
+                          current = current.right;
+                      }
+                  }
+
+                  public static void main(String[] args) {
+                      BinaryTree tree = new BinaryTree();
+
+                      tree.root = new Node(1);
+                      tree.root.left = new Node(2);
+                      tree.root.right = new Node(3);
+                      tree.root.left.left = new Node(4);
+                      tree.root.left.right = new Node(5);
+                      tree.root.right.left = new Node(6);
+                      tree.root.right.right = new Node(7);
+
+                      System.out.println("Inorder traversal of binary tree is:");
+                      tree.inorderTraversal(tree.root);
+                  }
+              }
+
+
+            </code>
+          </pre>
+        </div>
+        
+
+        <div class="tab-pane fade" id="python21" role="tabpanel" aria-labelledby="python-tab">
+          <pre>
+            <code class="language-python">
+              class Node:
+                  def __init__(self, key):
+                      self.left = None
+                      self.right = None
+                      self.value = key
+
+              def inorder_traversal(root):
+                  stack = []
+                  current = root
+
+                  while current is not None or stack:
+                      while current is not None:
+                          stack.append(current)
+                          current = current.left
+
+                      current = stack.pop()
+                      print(current.value, end=' ')
+                      current = current.right
+
+              # Example usage
+              root = Node(1)
+              root.left = Node(2)
+              root.right = Node(3)
+              root.left.left = Node(4)
+              root.left.right = Node(5)
+              root.right.left = Node(6)
+              root.right.right = Node(7)
+
+              print("Inorder traversal of binary tree is:")
+              inorder_traversal(root)
+
+
+
+            </code>
+          </pre>
+        </div>
+
+      </div>
+
+                      
+
+
+      <h1 class="array-subheading"><i class="fas fa-info-circle icon"></i> Understanding Post-order traversal in tree :</h1>
+      <p class="array-text-one">
+        In Post-order traversal, we visit the <span class="highlight"> left subtree</span> first, followed by the <span class="highlight"> right subtree </span>, and then the <span class="highlight"> root node</span>.
+      </p>
+
+
+      <h1 class="array-subheading"><i class="fas fa-info-circle icon"></i> Post-order recursive</h1>
+      <div class="array-code ">
+        <ul class=" nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link active" id="cpp-tab" data-bs-toggle="tab" href="#cpp3" role="tab" aria-controls="cpp" aria-selected="true">C++</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link" id="java-tab" data-bs-toggle="tab" href="#java3" role="tab" aria-controls="java" aria-selected="false">Java</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="lang-clr nav-link" id="python-tab" data-bs-toggle="tab" href="#python3" role="tab" aria-controls="python" aria-selected="false">Python</a>
+          </li>
+        </ul>
+      </div>
+
+      
+
+      <div class=" array-code tab-content" id="myTabContent">
+
+        <div class="tab-pane fade show active" id="cpp3" role="tabpanel" aria-labelledby="cpp-tab">
+          <pre>
+            <code class="language-cpp">
+              #include <iostream>
+                using namespace std;
+                
+                class Node {
+                public:
+                    int value;
+                    Node* left;
+                    Node* right;
+                
+                    Node(int key) {
+                        value = key;
+                        left = right = nullptr;
+                    }
+                };
+                
+                void postorderTraversal(Node* root) {
+                    if (root == nullptr) return;
+                
+                    // Traverse the left subtree
+                    postorderTraversal(root->left);
+                    // Traverse the right subtree
+                    postorderTraversal(root->right);
+                    // Visit the root node
+                    cout << root->value << " ";
+                }
+                
+                int main() {
+                    Node* root = new Node(1);
+                    root->left = new Node(2);
+                    root->right = new Node(3);
+                    root->left.left = new Node(4);
+                    root->left.right = new Node(5);
+                    root->right.left = new Node(6);
+                    root->right.right = new Node(7);
+                
+                    cout << "Postorder traversal of binary tree is: ";
+                    postorderTraversal(root);
+                    cout << endl;
+                
+                    return 0;
+                }
+                
+                
+                
+            </code>
+          </pre>
+        </div>
+
+        <div class="tab-pane fade" id="java3" role="tabpanel" aria-labelledby="java-tab">
+          <pre>
+            <code class="language-java">
+              class Node {
+                int value;
+                Node left, right;
+            
+                public Node(int item) {
+                    value = item;
+                    left = right = null;
+                }
+            }
+            
+            public class BinaryTree {
+                Node root;
+            
+                void postorderTraversal(Node node) {
+                    if (node == null) {
+                        return;
+                    }
+            
+                    // Traverse the left subtree
+                    postorderTraversal(node.left);
+                    // Traverse the right subtree
+                    postorderTraversal(node.right);
+                    // Visit the root node
+                    System.out.print(node.value + " ");
+                }
+            
+                public static void main(String[] args) {
+                    BinaryTree tree = new BinaryTree();
+            
+                    tree.root = new Node(1);
+                    tree.root.left = new Node(2);
+                    tree.root.right = new Node(3);
+                    tree.root.left.left = new Node(4);
+                    tree.root.left.right = new Node(5);
+                    tree.root.right.left = new Node(6);
+                    tree.root.right.right = new Node(7);
+            
+                    System.out.println("Postorder traversal of binary tree is:");
+                    tree.postorderTraversal(tree.root);
+                }
+            }
+            
+            </code>
+          </pre>
+        </div>
+
+        <div class="tab-pane fade" id="python3" role="tabpanel" aria-labelledby="python-tab">
+          <pre>
+            <code class="language-python">
+              class Node:
+                  def __init__(self, key):
+                      self.left = None
+                      self.right = None
+                      self.value = key
+
+              def postorder_traversal(root):
+                  if root:
+                      # Traverse the left subtree
+                      postorder_traversal(root.left)
+                      # Traverse the right subtree
+                      postorder_traversal(root.right)
+                      # Visit the root node
+                      print(root.value, end=' ')
+
+              # Example usage
+              root = Node(1)
+              root.left = Node(2)
+              root.right = Node(3)
+              root.left.left = Node(4)
+              root.left.right = Node(5)
+              root.right.left = Node(6)
+              root.right.right = Node(7)
+
+              print("Postorder traversal of binary tree is:")
+              postorder_traversal(root)
+
+
+            </code>
+          </pre>
+        </div>
+
+      </div>
+
+      
+      <h1 class="array-subheading"><i class="fas fa-info-circle icon"></i> Post-order with out Recursion</h1>
+
+      <div class="array-code ">
+        <ul class=" nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link active" id="cpp-tab" data-bs-toggle="tab" href="#cpp31" role="tab" aria-controls="cpp" aria-selected="true">C++</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link" id="java-tab" data-bs-toggle="tab" href="#java31" role="tab" aria-controls="java" aria-selected="false">Java</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="lang-clr nav-link" id="python-tab" data-bs-toggle="tab" href="#python31" role="tab" aria-controls="python" aria-selected="false">Python</a>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class=" array-code tab-content" id="myTabContent">
+
+
+        <div class="tab-pane fade show active" id="cpp31" role="tabpanel" aria-labelledby="cpp-tab">
+          <pre>
+            <code class="language-cpp">
+              
+              #include &lt;iostream &gt;
+              #include &lt;stack&gt;
+              using namespace std;
+              
+              class Node {
+              public:
+                  int value;
+                  Node* left;
+                  Node* right;
+              
+                  Node(int key) {
+                      value = key;
+                      left = right = nullptr;
+                  }
+              };
+              
+              void postorderTraversal(Node* root) {
+                  if (root == nullptr) return;
+              
+                  stack<Node*> s1, s2;
+                  s1.push(root);
+                  Node* node;
+              
+                  while (!s1.empty()) {
+                      node = s1.top();
+                      s1.pop();
+                      s2.push(node);
+              
+                      if (node->left) {
+                          s1.push(node->left);
+                      }
+                      if (node->right) {
+                          s1.push(node->right);
+                      }
+                  }
+              
+                  while (!s2.empty()) {
+                      node = s2.top();
+                      s2.pop();
+                      cout << node->value << " ";
+                  }
+              }
+              
+              int main() {
+                  Node* root = new Node(1);
+                  root->left = new Node(2);
+                  root->right = new Node(3);
+                  root->left->left = new Node(4);
+                  root->left->right = new Node(5);
+                  root->right->left = new Node(6);
+                  root->right->right = new Node(7);
+              
+                  cout << "Postorder traversal of binary tree is: ";
+                  postorderTraversal(root);
+                  cout << endl;
+              
+                  return 0;
+              }
+                
+            </code>
+          </pre>
+        </div>
+
+
+        <div class="tab-pane fade" id="java31" role="tabpanel" aria-labelledby="java-tab">
+          <pre>
+            <code class="language-java">
+              import java.util.Stack;
+
+              class Node {
+                  int value;
+                  Node left, right;
+
+                  public Node(int item) {
+                      value = item;
+                      left = right = null;
+                  }
+              }
+
+              public class BinaryTree {
+                  Node root;
+
+                  void postorderTraversal(Node node) {
+                      if (node == null) {
+                          return;
+                      }
+
+                      Stack<Node> s1 = new Stack<>();
+                      Stack<Node> s2 = new Stack<>();
+                      s1.push(node);
+
+                      while (!s1.isEmpty()) {
+                          Node current = s1.pop();
+                          s2.push(current);
+
+                          if (current.left != null) {
+                              s1.push(current.left);
+                          }
+                          if (current.right != null) {
+                              s1.push(current.right);
+                          }
+                      }
+
+                      while (!s2.isEmpty()) {
+                          Node temp = s2.pop();
+                          System.out.print(temp.value + " ");
+                      }
+                  }
+
+                  public static void main(String[] args) {
+                      BinaryTree tree = new BinaryTree();
+
+                      tree.root = new Node(1);
+                      tree.root.left = new Node(2);
+                      tree.root.right = new Node(3);
+                      tree.root.left.left = new Node(4);
+                      tree.root.left.right = new Node(5);
+                      tree.root.right.left = new Node(6);
+                      tree.root.right.right = new Node(7);
+
+                      System.out.println("Postorder traversal of binary tree is:");
+                      tree.postorderTraversal(tree.root);
+                  }
+              }
+
+
+
+            </code>
+          </pre>
+        </div>
+        
+
+        <div class="tab-pane fade" id="python31" role="tabpanel" aria-labelledby="python-tab">
+          <pre>
+            <code class="language-python">
+              class Node:
+                  def __init__(self, key):
+                      self.left = None
+                      self.right = None
+                      self.value = key
+
+              def postorder_traversal(root):
+                  if root is None:
+                      return
+
+                  stack1 = []
+                  stack2 = []
+                  stack1.append(root)
+
+                  while stack1:
+                      node = stack1.pop()
+                      stack2.append(node)
+
+                      if node.left:
+                          stack1.append(node.left)
+                      if node.right:
+                          stack1.append(node.right)
+
+                  while stack2:
+                      node = stack2.pop()
+                      print(node.value, end=' ')
+
+              # Example usage
+              root = Node(1)
+              root.left = Node(2)
+              root.right = Node(3)
+              root.left.left = Node(4)
+              root.left.right = Node(5)
+              root.right.left = Node(6)
+              root.right.right = Node(7)
+
+              print("Postorder traversal of binary tree is:")
+              postorder_traversal(root)
+
+
+            </code>
+          </pre>
+        </div>
+
+      </div>
+
+      
+
+      
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="prism.js"></script>
+  </body>
+</html>

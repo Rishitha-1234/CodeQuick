@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hare and Tortoise</title>
+
+    <link href="datastruct.css" rel="stylesheet">
+    <link href="proglang.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="prism.css" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+
+  <body class="bg-dark-subtle">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container-fluid">
+
+        <div class="navbar-nav icon">
+          <div class="logo-one">
+            <i class="fa-solid fa-code logo"></i>
+          </div>
+          <div class="txt">
+            <a class="nav-link active" aria-current="page" href="index.html">CodeQuick.in</a>
+          </div>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Programming Languages
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="cpp.html">C++</a></li>
+                <li><a class="dropdown-item" href="c.html">C</a></li>
+                <li><a class="dropdown-item" href="python.html">Python</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Data Structures
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="arrays.html">Arrays</a></li>
+                <li><a class="dropdown-item" href="strings.html">Strings</a></li>
+                <li><a class="dropdown-item" href="linkedlist.html">Linked List</a></li>
+                <li><a class="dropdown-item" href="stack.html">Stack</a></li>
+                <li><a class="dropdown-item" href="queue.html">Queue</a></li>
+                <li><a class="dropdown-item" href="dequeue.html">Deque</a></li>
+                <li><a class="dropdown-item" href="hashing.html">Hash Table</a></li>
+                <li><a class="dropdown-item" href="tree.html">Tree</a></li>
+                <li><a class="dropdown-item" href="heap.html">Heap</a></li>
+                <li><a class="dropdown-item" href="graph.html">Graph</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Algorithms
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="searchin_sorting.html">Searching and Sorting</a></li>
+                <li><a class="dropdown-item" href="two_pointer.html">Two Pointer</a></li>
+                <li><a class="dropdown-item" href="prefix_sum.html">Prefix Sum</a></li>
+                <li><a class="dropdown-item" href="kadane.html">Kadane</a></li>
+                <li><a class="dropdown-item" href="kmp.html">KMP</a></li>
+                <li><a class="dropdown-item" href="eucledian.html">Euclidean Algorithm for GCD</a></li>
+                <li><a class="dropdown-item" href="hare.html">Hare and tortoise</a></li>
+                <li><a class="dropdown-item" href="dikstra.html">Dijkstra's Algorithm</a></li>
+                <li><a class="dropdown-item" href="bellman.html">Bellman-Ford Algorithm</a></li>
+                <li><a class="dropdown-item" href="floyd.html">Floyd-Warshall Algorithm</a></li>
+                <li><a class="dropdown-item" href="prims.html">Prim's Algorithm</a></li>
+                <li><a class="dropdown-item" href="kruskal.html">Kruskal Algorithm</a></li>
+                <li><a class="dropdown-item" href="kosaraju.html">Kosaraju's Algorithm</a></li>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <div class="hero bg-dark-subtle">
+        
+      <h1 class="array-heading"><i class="fa-solid fa-sitemap"></i> Hare and Tortoise:</h1>
+      
+      <p class="array-text-one">
+        The "hare and tortoise" algorithm, also known as <span class="highlight"> Floyd's cycle detection algorithm</span>, is a popular algorithm used to detect cycles in a linked list or to find the starting point of a cycle.The tortoise (slow pointer) eventually catches up to the hare (fast pointer).
+        The hare and tortoise algorithm is efficient with a <span class="highlight">Time complexity of O(n)</span> and a constant space complexity O(1), making it suitable for large datasets or when memory usage needs to be minimal.
+    </p>
+
+      <div class="array-code ">
+        <ul class=" nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link active" id="cpp-tab" data-bs-toggle="tab" href="#cpp-two1" role="tab" aria-controls="cpp" aria-selected="true">C++</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link" id="java-tab" data-bs-toggle="tab" href="#java-two1" role="tab" aria-controls="java" aria-selected="false">Java</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="lang-clr nav-link" id="python-tab" data-bs-toggle="tab" href="#python-two1" role="tab" aria-controls="python" aria-selected="false">Python</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class=" array-code tab-content" id="myTabContent">
+
+        <div class="tab-pane fade show active" id="cpp-two1" role="tabpanel" aria-labelledby="cpp-tab">
+          <pre>
+            <code class="language-cpp">
+                #include &lt;iostream&gt;
+                using namespace std;
+
+                // Definition for a singly linked list node
+                struct ListNode {
+                    int val;
+                    ListNode *next;
+                    ListNode(int x) : val(x), next(nullptr) {}
+                };
+                
+                ListNode* hareTortoise(ListNode* head) {
+                    ListNode *tortoise = head;
+                    ListNode *hare = head;
+                    
+                    // Phase 1: detect cycle
+                    while (hare != nullptr && hare->next != nullptr) {
+                        tortoise = tortoise->next;
+                        hare = hare->next->next;
+                        
+                        if (tortoise == hare)
+                            break;
+                    }
+                    
+                    // No cycle detected
+                    if (hare == nullptr || hare->next == nullptr)
+                        return nullptr;
+                    
+                    // Phase 2: find the start of the cycle
+                    tortoise = head;
+                    while (tortoise != hare) {
+                        tortoise = tortoise->next;
+                        hare = hare->next;
+                    }
+                    
+                    return hare;
+                }
+                
+                // function to print the linked list
+                void printList(ListNode* head) {
+                    ListNode* current = head;
+                    while (current != nullptr) {
+                        cout << current->val << " -> ";
+                        current = current->next;
+                    }
+                    cout << "nullptr" << std::endl;
+                }
+                
+                // Main function for testing
+                int main() {
+                    // Create a linked list with a cycle
+                    ListNode* head = new ListNode(1);
+                    head->next = new ListNode(2);
+                    head->next->next = new ListNode(3);
+                    head->next->next->next = new ListNode(4);
+                    head->next->next->next->next = new ListNode(5);
+                    head->next->next->next->next->next = head->next;  // cycle back to node with value 2
+                    
+                    // Detect cycle and find the starting node of the cycle
+                    ListNode* startOfCycle = hareTortoise(head);
+                    if (startOfCycle)
+                        cout << "Cycle detected. Start of the cycle is at node with value: " << startOfCycle->val << endl;
+                    else
+                        cout << "No cycle detected." << endl;
+                    
+                    return 0;
+                }
+                    
+                    
+            </code>
+          </pre>
+        </div>
+
+        <div class="tab-pane fade" id="java-two1" role="tabpanel" aria-labelledby="java-tab">
+          <pre>
+            <code class="language-java">
+                // Definition for a singly linked list node
+                class ListNode {
+                    int val;
+                    ListNode next;
+                    ListNode(int x) {
+                        val = x;
+                        next = null;
+                    }
+                }
+                
+                public class HareAndTortoise {
+                
+                    public ListNode detectCycle(ListNode head) {
+                        if (head == null || head.next == null)
+                            return null;
+                
+                        ListNode tortoise = head;
+                        ListNode hare = head;
+                
+                        // Phase 1: detect cycle
+                        while (hare != null && hare.next != null) {
+                            tortoise = tortoise.next;
+                            hare = hare.next.next;
+                
+                            if (tortoise == hare)
+                                break;
+                        }
+                
+                        // No cycle detected
+                        if (hare == null || hare.next == null)
+                            return null;
+                
+                        // Phase 2: find the start of the cycle
+                        tortoise = head;
+                        while (tortoise != hare) {
+                            tortoise = tortoise.next;
+                            hare = hare.next;
+                        }
+                
+                        return hare;
+                    }
+                
+                    // Utility function to print the linked list
+                    public static void printList(ListNode head) {
+                        ListNode current = head;
+                        while (current != null) {
+                            System.out.print(current.val + " -> ");
+                            current = current.next;
+                        }
+                        System.out.println("null");
+                    }
+                
+                    // Main method for testing
+                    public static void main(String[] args) {
+                        // Create a linked list with a cycle
+                        ListNode head = new ListNode(1);
+                        head.next = new ListNode(2);
+                        head.next.next = new ListNode(3);
+                        head.next.next.next = new ListNode(4);
+                        head.next.next.next.next = new ListNode(5);
+                        head.next.next.next.next.next = head.next;  // cycle back to node with value 2
+                
+                        HareAndTortoise solution = new HareAndTortoise();
+                
+                        // Detect cycle and find the starting node of the cycle
+                        ListNode startOfCycle = solution.detectCycle(head);
+                        if (startOfCycle != null)
+                            System.out.println("Cycle detected. Start of the cycle is at node with value: " + startOfCycle.val);
+                        else
+                            System.out.println("No cycle detected.");
+                    }
+                }
+                
+
+
+            </code>
+          </pre>
+        </div>
+
+        <div class="tab-pane fade" id="python-two1" role="tabpanel" aria-labelledby="python-tab">
+          <pre>
+            <code class="language-python">
+              
+                # Definition for a singly linked list node
+                class ListNode:
+                    def __init__(self, x):
+                        self.val = x
+                        self.next = None
+                
+                def hare_tortoise(head):
+                    tortoise = head
+                    hare = head
+                    
+                    # Phase 1: detect cycle
+                    while hare and hare.next:
+                        tortoise = tortoise.next
+                        hare = hare.next.next
+                        
+                        if tortoise == hare:
+                            break
+                    
+                    # No cycle detected
+                    if not hare or not hare.next:
+                        return None
+                    
+                    # Phase 2: find the start of the cycle
+                    tortoise = head
+                    while tortoise != hare:
+                        tortoise = tortoise.next
+                        hare = hare.next
+                    
+                    return hare
+                
+                # function to print the linked list
+                def print_list(head):
+                    current = head
+                    while current:
+                        print(current.val, "->", end=" ")
+                        current = current.next
+                    print("None")
+                
+                # Example usage:
+                # Create a linked list with a cycle
+                # 1 -> 2 -> 3 -> 4 -> 5 -> 2 (back to node with value 2)
+                head = ListNode(1)
+                head.next = ListNode(2)
+                head.next.next = ListNode(3)
+                head.next.next.next = ListNode(4)
+                head.next.next.next.next = ListNode(5)
+                head.next.next.next.next.next = head.next  # cycle back to node with value 2
+                
+                # Detect cycle and find the starting node of the cycle
+                start_of_cycle = hare_tortoise(head)
+                if start_of_cycle:
+                    print("Cycle detected. Start of the cycle is at node with value:", start_of_cycle.val)
+                else:
+                    print("No cycle detected.")
+
+            </code>
+          </pre>
+        </div>
+
+      </div>
+
+      </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="prism.js"></script>
+  </body>
+</html>

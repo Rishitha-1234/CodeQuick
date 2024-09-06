@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kosaraju</title>
+
+    <link href="datastruct.css" rel="stylesheet">
+    <link href="proglang.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="prism.css" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+
+  <body class="bg-dark-subtle">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container-fluid">
+
+        <div class="navbar-nav icon">
+          <div class="logo-one">
+            <i class="fa-solid fa-code logo"></i>
+          </div>
+          <div class="txt">
+            <a class="nav-link active" aria-current="page" href="index.html">CodeQuick.in</a>
+          </div>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Programming Languages
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="cpp.html">C++</a></li>
+                <li><a class="dropdown-item" href="c.html">C</a></li>
+                <li><a class="dropdown-item" href="python.html">Python</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Data Structures
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="arrays.html">Arrays</a></li>
+                <li><a class="dropdown-item" href="strings.html">Strings</a></li>
+                <li><a class="dropdown-item" href="linkedlist.html">Linked List</a></li>
+                <li><a class="dropdown-item" href="stack.html">Stack</a></li>
+                <li><a class="dropdown-item" href="queue.html">Queue</a></li>
+                <li><a class="dropdown-item" href="dequeue.html">Deque</a></li>
+                <li><a class="dropdown-item" href="hashing.html">Hash Table</a></li>
+                <li><a class="dropdown-item" href="tree.html">Tree</a></li>
+                <li><a class="dropdown-item" href="heap.html">Heap</a></li>
+                <li><a class="dropdown-item" href="graph.html">Graph</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Algorithms
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="searchin_sorting.html">Searching and Sorting</a></li>
+                <li><a class="dropdown-item" href="two_pointer.html">Two Pointer</a></li>
+                <li><a class="dropdown-item" href="prefix_sum.html">Prefix Sum</a></li>
+                <li><a class="dropdown-item" href="kadane.html">Kadane</a></li>
+                <li><a class="dropdown-item" href="kmp.html">KMP</a></li>
+                <li><a class="dropdown-item" href="eucledian.html">Euclidean Algorithm for GCD</a></li>
+                <li><a class="dropdown-item" href="hare.html">Hare and tortoise</a></li>
+                <li><a class="dropdown-item" href="dikstra.html">Dijkstra's Algorithm</a></li>
+                <li><a class="dropdown-item" href="bellman.html">Bellman-Ford Algorithm</a></li>
+                <li><a class="dropdown-item" href="floyd.html">Floyd-Warshall Algorithm</a></li>
+                <li><a class="dropdown-item" href="prims.html">Prim's Algorithm</a></li>
+                <li><a class="dropdown-item" href="kruskal.html">Kruskal Algorithm</a></li>
+                <li><a class="dropdown-item" href="kosaraju.html">Kosaraju's Algorithm</a></li>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <div class="hero bg-dark-subtle">
+        
+      <h1 class="array-heading"><i class="fa-solid fa-sitemap"></i>kosaraju Algorithm:</h1>
+      
+      <p class="array-text-one">
+        Kosaraju's algorithm to find the number of <span class="highlight">strongly connected components (SCCs) </span> in a directed graph.
+    </p>
+
+      
+      <div class="array-code ">
+        <ul class=" nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link active" id="cpp-tab" data-bs-toggle="tab" href="#cpp-two1" role="tab" aria-controls="cpp" aria-selected="true">C++</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class=" lang-clr nav-link" id="java-tab" data-bs-toggle="tab" href="#java-two1" role="tab" aria-controls="java" aria-selected="false">Java</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="lang-clr nav-link" id="python-tab" data-bs-toggle="tab" href="#python-two1" role="tab" aria-controls="python" aria-selected="false">Python</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class=" array-code tab-content" id="myTabContent">
+
+        <div class="tab-pane fade show active" id="cpp-two1" role="tabpanel" aria-labelledby="cpp-tab">
+          <pre>
+            <code class="language-cpp">
+                #include &lt;bits/stdc++.h&gt;
+                using namespace std;
+                
+                class Solution {
+                private:
+                    // First DFS to fill the stack with nodes in order of finish time.
+                    void dfs(int node, vector&lt;int&gt; &vis, vector&lt;int&gt; adj[], stack&lt;int&gt; &st) {
+                        vis[node] = 1;  // Mark the current node as visited.
+                        for (auto it : adj[node]) {
+                            if (!vis[it]) {
+                                dfs(it, vis, adj, st);  // Recursively visit adjacent nodes.
+                            }
+                        }
+                        st.push(node);  // Push current node to stack after all its dependencies are visited.
+                    }
+                
+                    // Second DFS on the transposed graph to get SCCs.
+                    void dfs2(int node, vector&lt;int&gt; &vis, vector&lt;int&gt; adjT[]) {
+                        vis[node] = 1;  // Mark the current node as visited.
+                        for (auto it : adjT[node]) {
+                            if (!vis[it]) {
+                                dfs2(it, vis, adjT);  // Recursively visit adjacent nodes in transposed graph.
+                            }
+                        }
+                    }
+                
+                public:
+                    // Function to find number of strongly connected components in the graph.
+                    int kosaraju(int V, vector&lt;int&gt; adj[]) {
+                        vector&lt;int&gt; vis(V, 0);  // Visited array for original graph.
+                        stack&lt;int&gt; st;  // Stack to store nodes in order of finish time.
+                
+                        // Step 1: Perform DFS on original graph and fill stack according to finish times.
+                        for (int i = 0; i < V; i++) {
+                            if (!vis[i]) {
+                                dfs(i, vis, adj, st);
+                            }
+                        }
+                
+                        // Step 2: Create the transposed graph.
+                        vector&lt;int&gt; adjT[V];
+                        for (int i = 0; i < V; i++) {
+                            vis[i] = 0;  // Reset visited array for transposed graph.
+                            for (auto it : adj[i]) {
+                                adjT[it].push_back(i);  // Create the transposed graph.
+                            }
+                        }
+                
+                        // Step 3: Perform DFS on transposed graph in the order of nodes in stack.
+                        int scc = 0;
+                        while (!st.empty()) {
+                            int node = st.top();
+                            st.pop();
+                            if (!vis[node]) {
+                                scc++;  // Increment SCC count for each new DFS call.
+                                dfs2(node, vis, adjT);  // Perform DFS on transposed graph.
+                            }
+                        }
+                        return scc;  // Return the number of strongly connected components.
+                    }
+                };
+                
+                int main() {
+                    int n = 5;  // Number of vertices.
+                    int edges[5][2] = {
+                        {1, 0}, {0, 2},
+                        {2, 1}, {0, 3},
+                        {3, 4}
+                    };
+                
+                    // Constructing adjacency list representation of the graph.
+                    vector&lt;int&gt; adj[n];
+                    for (int i = 0; i < n; i++) {
+                        adj[edges[i][0]].push_back(edges[i][1]);
+                    }
+                
+                    Solution obj;
+                    int ans = obj.kosaraju(n, adj);  // Calling Kosaraju's algorithm function.
+                    cout << "The number of strongly connected components is: " << ans << endl;
+                
+                    return 0;
+                }
+                
+                    
+            </code>
+          </pre>
+        </div>
+
+        <div class="tab-pane fade" id="java-two1" role="tabpanel" aria-labelledby="java-tab">
+          <pre>
+            <code class="language-java">
+                import java.util.*;
+
+                class Solution {
+                    // Helper function for first DFS to fill the stack
+                    private void dfs(int node, boolean[] visited, List&lt;Integer&gt;[] adjList, Stack&lt;Integer&gt; stack) {
+                        visited[node] = true;
+                        for (int neighbor : adjList[node]) {
+                            if (!visited[neighbor]) {
+                                dfs(neighbor, visited, adjList, stack);
+                            }
+                        }
+                        stack.push(node);
+                    }
+
+                    // Helper function for second DFS on transposed graph
+                    private void dfs2(int node, boolean[] visited, List&lt;Integer&gt;[] adjListT) {
+                        visited[node] = true;
+                        for (int neighbor : adjListT[node]) {
+                            if (!visited[neighbor]) {
+                                dfs2(neighbor, visited, adjListT);
+                            }
+                        }
+                    }
+
+                    // Function to find number of strongly connected components in the graph
+                    public int kosaraju(int V, List&lt;Integer&gt;[] adj) {
+                        Stack&lt;Integer&gt; stack = new Stack<>();
+                        boolean[] visited = new boolean[V];
+
+                        // Step 1: Perform DFS and fill stack with nodes in finishing order
+                        for (int i = 0; i < V; i++) {
+                            if (!visited[i]) {
+                                dfs(i, visited, adj, stack);
+                            }
+                        }
+
+                        // Step 2: Transpose the graph
+                        List&lt;Integer&gt;[] adjListT = new List[V];
+                        for (int i = 0; i < V; i++) {
+                            adjListT[i] = new ArrayList<>();
+                        }
+                        for (int i = 0; i < V; i++) {
+                            for (int neighbor : adj[i]) {
+                                adjListT[neighbor].add(i);
+                            }
+                        }
+
+                        // Step 3: Perform DFS on transposed graph in order of stack nodes
+                        Arrays.fill(visited, false);
+                        int sccCount = 0;
+                        while (!stack.isEmpty()) {
+                            int node = stack.pop();
+                            if (!visited[node]) {
+                                dfs2(node, visited, adjListT);
+                                sccCount++;
+                            }
+                        }
+
+                        return sccCount;
+                    }
+
+                    public static void main(String[] args) {
+                        int V = 5;  // Number of vertices
+                        List&lt;Integer&gt;[] adj = new List[V];
+                        for (int i = 0; i < V; i++) {
+                            adj[i] = new ArrayList<>();
+                        }
+
+                        // Example edges
+                        int[][] edges = {
+                            {1, 0}, {0, 2},
+                            {2, 1}, {0, 3},
+                            {3, 4}
+                        };
+
+                        // Constructing adjacency list representation of the graph
+                        for (int[] edge : edges) {
+                            adj[edge[0]].add(edge[1]);
+                        }
+
+                        Solution obj = new Solution();
+                        int ans = obj.kosaraju(V, adj);
+                        System.out.println("The number of strongly connected components is: " + ans);
+                    }
+                }
+
+
+            </code>
+          </pre>
+        </div>
+
+        <div class="tab-pane fade" id="python-two1" role="tabpanel" aria-labelledby="python-tab">
+          <pre>
+            <code class="language-python">
+                from collections import defaultdict, deque
+
+            class Solution:
+                def __init__(self):
+                    self.visited = None
+
+                # Helper function for first DFS to fill the stack
+                def dfs(self, node, adjList, stack):
+                    self.visited[node] = True
+                    for neighbor in adjList[node]:
+                        if not self.visited[neighbor]:
+                            self.dfs(neighbor, adjList, stack)
+                    stack.append(node)
+
+                # Helper function for second DFS on transposed graph
+                def dfs2(self, node, adjListT):
+                    self.visited[node] = True
+                    for neighbor in adjListT[node]:
+                        if not self.visited[neighbor]:
+                            self.dfs2(neighbor, adjListT)
+
+                # Function to find number of strongly connected components in the graph
+                def kosaraju(self, V, adj):
+                    stack = []
+                    self.visited = [False] * V
+
+                    # Step 1: Perform DFS and fill stack with nodes in finishing order
+                    for i in range(V):
+                        if not self.visited[i]:
+                            self.dfs(i, adj, stack)
+
+                    # Step 2: Transpose the graph
+                    adjListT = defaultdict(list)
+                    for i in range(V):
+                        for neighbor in adj[i]:
+                            adjListT[neighbor].append(i)
+
+                    # Step 3: Perform DFS on transposed graph in order of stack nodes
+                    self.visited = [False] * V
+                    sccCount = 0
+                    while stack:
+                        node = stack.pop()
+                        if not self.visited[node]:
+                            self.dfs2(node, adjListT)
+                            sccCount += 1
+
+                    return sccCount
+
+            # Example usage:
+            if __name__ == "__main__":
+                V = 5  # Number of vertices
+                adj = [[] for _ in range(V)]
+
+                # Example edges
+                edges = [
+                    [1, 0], [0, 2],
+                    [2, 1], [0, 3],
+                    [3, 4]
+                ]
+
+                # Constructing adjacency list representation of the graph
+                for edge in edges:
+                    adj[edge[0]].append(edge[1])
+
+                obj = Solution()
+                ans = obj.kosaraju(V, adj)
+                print("The number of strongly connected components is:", ans)
+
+            </code>
+          </pre>
+        </div>
+
+      </div>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>C++</title>
+    
+    <link href="proglang.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="prism.css" >
+   
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+
+          <div class="navbar-nav icon">
+            <div class="logo-one">
+                <i class="fa-solid fa-code logo"></i>
+            </div>
+            <div class="txt">
+                <a class="nav-link active" aria-current="page" href="index.html">CodeQuick.in</a>
+            </div>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Programming Languages
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="cpp.html">C++</a></li>
+                  <li><a class="dropdown-item" href="c.html">C</a></li>
+                  <li><a class="dropdown-item" href="python.html">Python</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          
+
+
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Data Structures
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="arrays.html">Arrays</a></li>
+                  <li><a class="dropdown-item" href="strings.html">Strings</a></li>
+                  <li><a class="dropdown-item" href="linkedlist.html">Linked List</a></li>
+                  <li><a class="dropdown-item" href="stack.html">Stack</a></li>
+                  <li><a class="dropdown-item" href="queue.html">Queue</a></li>
+                  <li><a class="dropdown-item" href="dequeue.html">Deque</a></li>
+                  <li><a class="dropdown-item" href="hashing.html">Hash Table</a></li>
+                  <li><a class="dropdown-item" href="tree.html">Tree</a></li>
+                  <li><a class="dropdown-item" href="heap.html">Heap</a></li>
+                  <li><a class="dropdown-item" href="graph.html">Graph</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Algorithms
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="searchin_sorting.html">Searching and Sorting</a></li>
+                  <li><a class="dropdown-item" href="two_pointer.html">Two Pointer</a></li>
+                  <li><a class="dropdown-item" href="prefix_sum.html">Prefix Sum</a></li>
+                  <li><a class="dropdown-item" href="kadane.html">Kadane</a></li>
+                  <li><a class="dropdown-item" href="kmp.html">KMP</a></li>
+                  <li><a class="dropdown-item" href="eucledian.html">Euclidean Algorithm for GCD</a></li>
+                  <li><a class="dropdown-item" href="hare.html">Hare and tortoise</a></li>
+                  <li><a class="dropdown-item" href="dikstra.html">Dijkstra's Algorithm</a></li>
+                  <li><a class="dropdown-item" href="bellman.html">Bellman-Ford Algorithm</a></li>
+                  <li><a class="dropdown-item" href="floyd.html">Floyd-Warshall Algorithm</a></li>
+                  <li><a class="dropdown-item" href="prims.html">Prim's Algorithm</a></li>
+                  <li><a class="dropdown-item" href="kruskal.html">Kruskal Algorithm</a></li>
+                  <li><a class="dropdown-item" href="kosaraju.html">Kosaraju's Algorithm</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+
+          
+        </div>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <div class=" cpp-hero bg-dark-subtle ">
+      <div class="row">
+        <div class="col-3">
+          <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end bg-dark">
+            <nav class="nav nav-pills flex-column fixed-bottom sticky-bottom sticky-top cpp-side-nav" >
+              <a class="nav-link bg-dark" href="#getting-started">Getting Started with C++</a>
+              <a class="nav-link bg-dark" href="#data-types">Data Types</a>
+              <a class="nav-link bg-dark" href="#operators">Operators</a>
+              <a class="nav-link bg-dark" href="#cond-state">Conditional Statements</a>
+              <nav class="nav nav-pills flex-column bg-dark">
+                <a class="nav-link ms-3 my-1 bg-dark" href="#ifelse">If else</a>
+                <a class="nav-link ms-3 my-1 bg-dark" href="#switch">Switch</a>
+              </nav>
+              <a class="nav-link bg-dark" href="#loops">Loops</a>
+              <nav class="nav nav-pills flex-column bg-dark">
+                <a class="nav-link ms-3 my-1 bg-dark" href="#for">For</a>
+                <a class="nav-link ms-3 my-1 bg-dark" href="#while">While</a>
+                <a class="nav-link ms-3 my-1 bg-dark" href="#dowhile">Do While</a>
+              </nav>
+              <a class="nav-link bg-dark" href="#functions">Functions</a>
+            </nav>
+          </nav>
+        </div>
+    
+
+        
+    
+      <div class="col-8">
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+          <div id="getting-started">
+            <h1>Getting started with C++</h1>
+            <p class="data-names">To get started with lets know basic syntax of C++ or Cpp</p>
+
+
+            <pre class="hello-cpp"><code class=" language-cpp">
+
+              // C++ program to display "Hello World"
+
+              // Header file for input output functions
+              #include &lt;iostream&gt;
+              using namespace std;
+
+              // Main() function: where the execution of
+              // program begins
+              int main()
+              {
+                cout << "Hello World";
+                return 0;
+              }
+
+            </code></pre>
+          </div>
+  
+
+          <div id="data-types">
+            <h1>Data Types</h1>
+           <div class="data-names">
+            <p>Let's see how we declare variables and their data types in C++.</p>
+            <p>Memory taken by:</p>
+            <ul>
+                <li><code>bool</code>: 1 byte</li>
+                <li><code>char</code>: 1 byte</li>
+                <li><code>wchar_t</code>: 2 or 4 bytes (implementation-defined)</li>
+                <li><code>short</code>: 2 bytes</li>
+                <li><code>int</code>: 4 bytes</li>
+                <li><code>long</code>: 4 or 8 bytes (implementation-defined)</li>
+                <li><code>long long</code>: 8 bytes</li>
+                <li><code>float</code>: 4 bytes</li>
+                <li><code>double</code>: 8 bytes</li>
+                <li><code>long double</code>: 8, 12, or 16 bytes (implementation-defined)</li>
+            </ul>
+           </div>
+
+           
+          
+            <p>
+              <pre><code class=" language-cpp">
+                int a = 5;        // Integer
+
+                float b = 5.99;   // Floating point number
+
+                char c = 'A';     // Character
+
+                bool d = true;    // Boolean
+
+                string e = "Hello"; // String
+
+              </code></pre>
+            </p>
+          </div>
+
+
+          <div id="operators">
+            <h1>Operators</h1>
+            <p class="data-names">An operator is a symbol that operates on a value to perform specific mathematical or logical computations. They form the foundation of any programming language. In C++, we have built-in operators to provide the required functionality.</p>
+            <p>
+              <pre><code class="language-cpp">
+                // Arithmetic
+                  + - * / %
+
+                // Assignment
+                  = += -= *= /= %=
+
+                // Comparison
+                  == != > < >= <=
+
+                // Logical
+                  && || !
+
+              </code></pre>
+            </p>
+          </div>
+
+
+          <div id="cond-state">
+            <h1>Conditional Statements</h1>
+            <p class="data-names">In C++, conditional statements are control structures that let code make decisions.</p>
+          </div>
+
+
+          <div id="ifelse">
+            <h3 class="subheading">If else</h3>
+            <p class="data-names">The if statement alone tells us that if a condition is true it will execute a block of statements and if the condition is false it won’t. But what if we want to do something else if the condition is false. Here comes the C++ else statement. We can use the else statement with if statement to execute a block of code when the condition is false.</p>
+          
+            <pre>
+              <code class="language-cpp">
+                if (condition)
+                { 
+                    // Executes this block if
+                    // condition is true
+                }
+                else
+                {
+                    // Executes this block if
+                    // condition is false
+                }
+              </code>
+            </pre>
+          </div>
+
+
+          <div id="switch">
+            <h3 class="subheading">Switch</h3>
+            <p class="data-names">The switch statement in C++ is a flow control statement that is used to execute the different blocks of statements based on the value of the given expression. We can create different cases for different values of the switch expression. We can specify any number of cases in the switch statement but the case value can only be of type int or char.</p>
+          
+            <pre>
+              <code class="language-cpp">
+                switch (expression) 
+                {
+                  case value_1:
+                      // statements_1;
+                      break;
+                  case value_2:
+                      // statements_2;
+                      break;
+                  .....
+                  .....
+                  default:
+                      // default_statements;
+                      break;
+              }
+              </code>
+            </pre>
+          </div>
+
+          <div id="loops">
+            <h1>Loops</h1>
+            <p class="data-names">Use when we need to repeatedly execute a block of statements untill some condition is met.</p>
+          </div>
+
+
+          <div id="for">
+            <h3 class="subheading">For</h3>
+            <p class="data-names">A For loop is a repetition control structure that allows us to write a loop that is executed a specific number of times. The loop enables us to perform n number of steps together in one line. </p>
+          
+            <pre>
+              <code class="language-cpp">
+                for (initialization expr; test expr; update expr)
+                {    
+                    // body of the loop
+                    // statements we want to execute
+                }
+              </code>
+            </pre>
+          </div>
+
+          <div id="while">
+            <h3 class="subheading">While</h3>
+            <p class="data-names">A while loop in programming is used to repeatedly execute a block of code as long as a specified condition remains true. It is useful when you do not know in advance how many times you need to execute a block of code.</p>
+          
+            <pre>
+              <code class="language-cpp">
+                while (condition) 
+                {
+                    // Code to be executed
+                }
+              </code>
+            </pre>
+          </div>
+
+          <div id="dowhile">
+            <h3 class="subheading">Do while</h3>
+            <p class="data-names">A do-while loop in programming is similar to a while loop, but with a key difference: it guarantees that the loop body will execute at least once, even if the condition is initially false. This is because the condition is checked after the loop body has been executed.</p>
+          
+            <pre>
+              <code class="language-cpp">
+                do 
+                {
+                    // Code to be executed
+                } while (condition);
+              </code>
+            </pre>
+          </div>
+
+          <div id="functions">
+            <h1>Functions</h1>
+            <p class="data-names">Functions in C++ are reusable blocks of code that perform a specific task. They help organize and manage code, making it more readable, modular, and easier to maintain. Here's a comprehensive guide to understanding and using functions in C++.</p>
+            <pre class="hello-cpp"><code class=" language-cpp">
+              return_type function_name(parameters) 
+              {
+                  // Function body
+              }
+            </code></pre>
+          </div>
+          <p class="data-names">
+            <ul>
+              <li><h4>return_type:</h4>The type of value the function returns (e.g., int, void, double).</li>
+              <li><h4>function_name:</h4>The name of the function.</li>
+              <li><h4>parameters:</h4> A list of inputs the function accepts, enclosed in parentheses.</li>
+            </ul>
+          </p>
+
+
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="prism.js"></script>
+  </body>
+</html>
